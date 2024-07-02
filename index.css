@@ -83,12 +83,6 @@ header>.container {
     display: flex;
 }
 
-.left, .right {
-    flex: 1;
-    padding: 20px;
-    box-sizing: border-box;
-}
-
 .left img, .right img {
     max-width: 100%; /* Ensures images resize properly */
     height: auto; /* Maintains aspect ratio */
@@ -100,8 +94,12 @@ header>.container {
     height: auto;
     display: block;
     margin: 0;
-    width: 80%; /* Increase image size */
+    width: 90%; /* Increase image size */
     max-height: 100vh; /* Limit height to 80% of viewport height */
+}
+
+.right img {
+    width: 100%;
 }
 
 header {
@@ -134,9 +132,9 @@ nav ul li a {
     font-weight: bold;
 }
 
-main {
+/* main {
     padding: 2rem 0;
-}
+} */
 
 h2 {
     text-align: center;
