@@ -36,6 +36,20 @@ body {
     background-size: 150% 150%;
     transition: background 0.3s ease-in-out;
     overflow-x: hidden;
+    display: flex;
+    flex-direction: column;
+}
+
+header > .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+#home > .container {
+    flex-direction: column;
+    align-items: start;
+    
 }
 
 .top-right-icon {
@@ -191,7 +205,45 @@ section .card a p {
 }
 
 footer {
+    position: fixed;
+    bottom: 0;
     color: #FAF9F6;
     text-align: center;
     padding: 1rem 0;
+    width: 100%;
+}
+
+footer p {
+    color: #faf9f6c7;
+}
+
+/* Media queries for responsiveness */
+@media (max-width: 768px) {
+    nav ul {
+        flex-direction: column;
+    }
+
+    nav ul li {
+        margin: 1rem 0;
+    }
+
+    .top-right-icon {
+        display: none;
+    }
+
+    #blob-one {
+        display: none;
+    }
+
+    .bottom-right-icon {
+        display: none;
+    }
+
+    .logo-services {
+        width: 30vw; /* Adjusted for smaller screens */
+    }
+
+    #home > .container {
+        margin-top: 4rem; /* Increase top margin for logo */
+    }
 }

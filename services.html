@@ -3,9 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>VERA Assistenza</title>
-    <link rel="icon" href="/assets/VERALogo.png" type="image/x-icon"> <!-- GitHub version -->
-    <!-- <link rel="icon" href="./images/index/VERALogo.ico" type="image/x-icon"> --> <!-- Official version -->
+    <title>Services</title>
     <link rel="stylesheet" href="services.css">
 </head>
 <body>
@@ -22,13 +20,13 @@
                         </a>
                     </div>
                     <div class="card">
-                        <a href="caf.html">
+                        <a href="#" id="openPopupCaf" class="trigger">
                             <h3><img src="assets/png/caf_icon.png" alt="icona caf" class="logo-services"></h3>
                             <p>CAF</p>
                         </a>
                     </div>
                     <div class="card">
-                        <a href="caf.html">
+                        <a href="#" id="openPopupPatronato" class="trigger">
                             <h3><img src="assets/png/patron_icon.png" alt="icona patronato" class="logo-services"></h3>
                             <p>Patronato</p>
                         </a>
@@ -36,47 +34,78 @@
                 </div>
             </div>
         </section>
-
+    
         <section id="immigrazione">
-            <div id="popup" class="popup">
-                <div>
-                    <h1>Immigrazione</h1>
-                </div>
-                <div class="container-services">
-                    <div class="popup-content-imm">
-                        <span class="close-btn" id="closePopupBtn">&times;</span>
-                        <ul class="services" id="immigrservices">
-                            <li onclick="showRequirements(this, 'Rinnovo/Rilascio del Permesso di Soggiorno', ['Passport', 'Permesso di soggiorno', 'Carta d\'identità', 'Codice fiscale', 'Contratto di lavoro(UNILAV)/Denuncia rapporto di lavoro', 'Ultime 3 buste paghe o bollettini INPS', 'CUD', 'Documenti personali dei figli (se ci sono figli meno di 14 anni)'])">Rinnovo/Rilascio del Permesso di Soggiorno</li>
-                            <li onclick="showRequirements(this, 'Rilascio del Carta Soggiorno', ['Permesso di soggiorno', 'Carta d\'identità', 'Codice fiscale', 'Passaporto', 'Contratto di lavoro (Denuncia rapporto di lavoro/Modello UNILAV)','Bolettini INPS/Busta paga', 'CUD', 'Allogiativa(se c\'è carico)', 'Test lingua italiana'])">Rilascio/Aggiornamento del Carta Soggiorno</li>
-                            <li onclick="showRequirements(this, 'Aggiornamento del Carta Soggiorno', ['Permesso di soggiorno', 'Carta d\'identità', 'Codice fiscale', 'Passaporto'])">Rilascio/Aggiornamento del Carta Soggiorno</li>
-                            <li onclick="showRequirements(this, 'Test Italiano (Appuntamento)', ['Carta d\'identità/Passaporto', 'Codice fiscale', 'Carta soggiorno/Permesso di soggiorno', 'SPID'])">Test Italiano</li>
-                            <li onclick="showRequirements(this, 'Ricongiungimento Familiare (Petition)', ['Carta d\'identità', 'Codice fiscale', 'Permesso di soggiorno', 'Passaporto', 'CUD/730/UNICO/Bollettini INPS', 'Busta paga', 'Contratto di casa', 'Idoneità alloggiativa', 'S2 e Carta d\'identità del proprietario'])">Ricongiungimento Familiare</li> <!-- Do an if for this specific list -->
-                            <li onclick="showRequirements(this, 'Cittadinanza')">Cittadinanza</li>
-                            <li onclick="showRequirements(this, 'Accompagnamento')">Accompagnamento</li>
-                            <!-- <li onclick="showRequirements(this, 'Accompagnamento')">Accompagnamento</li> -->
-                        </ul>
-                    </div>
-                    <div class="requirements" id="requirements">
-                        <h2>Awaiting for your choice on the list.</h2>
-                        <p>Please select one of the services to see the requirements.</p>
+            <div id="popupImm" class="popup">
+                <div class="popup-content">
+                    <span class="close-btn" id="closePopupImm">&times;</span>
+                    <h1>IMMIGRAZIONE</h1>
+                    <div class="container-services">
+                        <div class="popup-content-imm">
+                            <ul class="services" id="immigrservices">
+                                <li onclick="showRequirements(this, 'Rinnovo/Rilascio del Permesso di Soggiorno', ['Passport', 'Permesso di soggiorno', 'Carta d\'identità', 'Codice fiscale', 'Contratto di lavoro(UNILAV)/Denuncia rapporto di lavoro', 'Ultime 3 buste paghe o bollettini INPS', 'CUD', 'Documenti personali dei figli (se ci sono figli meno di 14 anni)'])">Rinnovo/Rilascio del Permesso di Soggiorno</li>
+                                <li onclick="showRequirements(this, 'Rilascio del Carta Soggiorno', ['Permesso di soggiorno', 'Carta d\'identità', 'Codice fiscale', 'Passaporto', 'Contratto di lavoro (Denuncia rapporto di lavoro/Modello UNILAV)','Bolettini INPS/Busta paga', 'CUD', 'Allogiativa(se c\'è carico)', 'Test lingua italiana'])">Rilascio/Aggiornamento del Carta Soggiorno</li>
+                                <li onclick="showRequirements(this, 'Aggiornamento del Carta Soggiorno', ['Permesso di soggiorno', 'Carta d\'identità', 'Codice fiscale', 'Passaporto'])">Rilascio/Aggiornamento del Carta Soggiorno</li>
+                                <li onclick="showRequirements(this, 'Test Italiano (Appuntamento)', ['Carta d\'identità/Passaporto', 'Codice fiscale', 'Carta soggiorno/Permesso di soggiorno', 'SPID'])">Test Italiano</li>
+                                <li onclick="showRequirements(this, 'Ricongiungimento Familiare (Petition)', ['Carta d\'identità', 'Codice fiscale', 'Permesso di soggiorno', 'Passaporto', 'CUD/730/UNICO/Bollettini INPS', 'Busta paga', 'Contratto di casa', 'Idoneità alloggiativa', 'S2 e Carta d\'identità del proprietario'])">Ricongiungimento Familiare</li>
+                                <li onclick="showRequirements(this, 'Cittadinanza', ['Requirement 1', 'Requirement 2', 'Requirement 3'])">Cittadinanza</li>
+                                <li onclick="showRequirements(this, 'Accompagnamento', ['Requirement 1', 'Requirement 2', 'Requirement 3'])">Accompagnamento</li>
+                            </ul>
+                        </div>
+                        <div class="requirements" id="requirements">
+                            <h2>Awaiting your choice from the list.</h2>
+                            <p>Please select one of the services to see the requirements.</p>
+                        </div>
                     </div>
                 </div>
             </div>
         </section>
-
-        <section id="contacts">
-            <!-- <p>Via Pecchio 7, Milano ー 02 36524234/3247426685</p>
-            <p>Viale Stelvio 73, Milano ー 3291621392</p>
-            <p>Via Bessarione 5, Milano ー 02 36756429/3888552113</p> -->
+    
+        <section id="caf">
+            <div id="popupCaf" class="popup">
+                <div class="popup-content">
+                    <span class="close-btn" id="closePopupCaf">&times;</span>
+                    <h1>CAF</h1>
+                    <div class="container-services">
+                        <div class="popup-content-imm">
+                            <ul class="services" id="cafservices">
+                                <!-- Add CAF services here -->
+                            </ul>
+                        </div>
+                        <div class="requirements" id="requirementsCaf">
+                            <h2>Awaiting your choice from the list.</h2>
+                            <p>Please select one of the services to see the requirements.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    
+        <section id="patronato">
+            <div id="popupPatronato" class="popup">
+                <div class="popup-content">
+                    <span class="close-btn" id="closePopupPatronato">&times;</span>
+                    <h1>PATRONATO</h1>
+                    <div class="container-services">
+                        <div class="popup-content-imm">
+                            <ul class="services" id="patronatoservices">
+                                <!-- Add Patronato services here -->
+                            </ul>
+                        </div>
+                        <div class="requirements" id="requirementsPatronato">
+                            <h2>Awaiting your choice from the list.</h2>
+                            <p>Please select one of the services to see the requirements.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </section>
     </main>
-
-    <!-- <footer>
-        <div class="container">
-            <p>&copy; 2024 VERA Assistenza Milano Italy. All rights reserved.</p>
-        </div>
-    </footer> -->
-
+    
+    <footer>
+        <p class="transparent-text">&copy; 2024 VERA Assistenza Milano Italy. All rights reserved.</p>
+    </footer>
+    
     <script src="services.js"></script>
 </body>
 </html>
