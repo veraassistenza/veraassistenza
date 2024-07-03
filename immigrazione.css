@@ -31,7 +31,7 @@ body {
     display: grid;
     grid-template-rows: auto 1fr auto;
     height: 100vh; /* Set height to ensure scrolling */
-    background: linear-gradient(135deg, #ffffff 1%, #a31616 99%);
+    background: linear-gradient(135deg, #a31616 1%, #ffffff 99%);
     background-size: 150% 150%;
     transition: background 0.3s ease-in-out;
     overflow-x: hidden;

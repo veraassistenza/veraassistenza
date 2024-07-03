@@ -31,10 +31,16 @@ body {
     display: grid;
     grid-template-rows: auto 1fr auto;
     height: 100vh; /* Set height to ensure scrolling */
-    background: linear-gradient(135deg, #ffffff 1%, #a31616 99%);
+    background: linear-gradient(135deg, #d8b5b5 10%, #f70000 90%);
     background-size: 150% 150%;
     transition: background 0.3s ease-in-out;
     overflow-x: hidden;
+}
+
+#immigrazione {
+    display: flex;
+    justify-content: center;
+    z-index: 9999;
 }
 
 .top-right-icon {
@@ -149,7 +155,7 @@ p {
     margin-bottom: 1rem;
 }
 
-button {
+/* button {
     display: block;
     margin: 0 auto;
     padding: 0.5rem 1rem;
@@ -162,7 +168,7 @@ button {
 
 button:hover {
     background: darkred;
-}
+} */
 
 .grid {
     display: grid;
@@ -196,3 +202,67 @@ footer {
     text-align: center;
     padding: 1rem 0;
 }
+
+/* Popups */
+.popup {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    width: 80%;
+    height: 80%;
+    display: flex;
+    justify-content: center;
+    background-color: rgba(219, 219, 219, 0.3);
+    border-radius: 10px;
+    color: black;
+}
+
+.close-btn {
+    position: absolute;
+    top: 10px;
+    right: 20px;
+    font-size: 24px;
+    cursor: pointer;
+}
+
+/* Container and services */
+.popup {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.container-services {
+    display: flex;
+    max-width: 800px;
+    overflow: hidden; /* Hide overflow to prevent scrollbar */
+  }
+
+  .container-services {
+    flex: 1;
+    padding: 20px;
+    list-style-type: none;
+    margin: 0;
+    overflow-y: auto; /* Enable scrolling if list is too long */
+  }
+
+  .services li {
+    cursor: pointer;
+    padding: 10px;
+    transition: background-color 0.3s;
+    list-style-type: none;
+  }
+
+  .services li.selected {
+    text-align: right;
+    background-color: #666666;
+  }
+
+  .requirements {
+    flex: 2;
+    padding: 20px;
+  }
+
+  .requirements h2 {
+    margin-top: 0;
+  }

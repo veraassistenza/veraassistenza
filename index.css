@@ -2,7 +2,7 @@
     --cultured: #FAF9F6;
 }
 
-/* WebKit (Chrome, Safari, Opera) */
+/* WebKit (Chrome, Safari, Opera) Scrollbar*/
 ::-webkit-scrollbar {
     width: 8px;
 }
@@ -24,6 +24,7 @@ html, body {
     height: 100%;
 }
 
+/* Default gradient for every page */
 body {
     box-sizing: border-box;
     font-family: Arial, sans-serif;
