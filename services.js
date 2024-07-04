@@ -60,7 +60,7 @@ document.addEventListener("DOMContentLoaded", function() {
     });
 });
 
-function showRequirements(element, serviceName, requirements = []) {
+/* function showRequirements(element, serviceName, requirements = []) {
     var requirementSection = document.getElementById('requirements');
     var requirementTitle = document.createElement('h2');
     var requirementList = document.createElement('ul');
@@ -89,4 +89,53 @@ function showRequirements(element, serviceName, requirements = []) {
     });
 
     element.classList.add('selected');
-}
+} */
+
+    function showRequirements(element, serviceName, requirements = []) {
+        var requirementSection = document.getElementById('requirements');
+        var requirementTitle = document.createElement('h2');
+        requirementTitle.textContent = serviceName;
+    
+        var requirementList = document.createElement('ul');
+    
+        if (requirements.length > 0) {
+            requirements.forEach(function(requirement) {
+                var listItem = document.createElement('li');
+                listItem.textContent = requirement.text;
+    
+                if (requirement.sublist) {
+                    listItem.classList.add('has-sublist');
+                    var sublist = document.createElement('ul');
+                    requirement.sublist.forEach(function(subRequirement) {
+                        var subListItem = document.createElement('li');
+                        subListItem.textContent = subRequirement;
+                        sublist.appendChild(subListItem);
+                    });
+                    listItem.appendChild(sublist);
+                }
+    
+                requirementList.appendChild(listItem);
+            });
+        } else {
+            var listItem = document.createElement('li');
+            listItem.textContent = "Requirements not specified.";
+            requirementList.appendChild(listItem);
+        }
+    
+        requirementSection.innerHTML = '';
+        requirementSection.appendChild(requirementTitle);
+        requirementSection.appendChild(requirementList);
+    
+        var servicesList = document.querySelectorAll('.services li');
+        servicesList.forEach(function(service) {
+            service.classList.remove('selected');
+        });
+    
+        element.classList.add('selected');
+    }
+
+document.querySelectorAll('.popup ul li').forEach(li => {
+    if (li.querySelector('ul')) {
+        li.style.fontWeight = 'bold'; // Make the parent list item bold
+    }
+});

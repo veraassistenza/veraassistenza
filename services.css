@@ -2,6 +2,11 @@
     --cultured: #FAF9F6;
 }
 
+* {
+    transition: all 0.5s ease-in-out;
+    color: white;
+}
+
 html, body {
     height: 100%;
     margin: 0;
@@ -96,7 +101,6 @@ main {
 h2 {
     text-align: center;
     margin-bottom: 1rem;
-    color: white;
 }
 
 p {
@@ -122,6 +126,10 @@ section .card a p {
     color: inherit;
 }
 
+.card a p {
+    letter-spacing: 1.5px;
+}
+
 .logo-services {
     width: 20vw;
     max-width: 100px;
@@ -140,7 +148,7 @@ footer {
 
 /* Popups */
 .popup {
-    display: none;
+    display: flex;
     position: fixed;
     z-index: 1;
     top: 50%;
@@ -152,9 +160,11 @@ footer {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    background-color: rgba(219, 219, 219, 0.9);
+    /* background-color: rgba(219, 219, 219, 0.9); */
+    background-color: rgba(141, 78, 78, 0.9);
     border-radius: 10px;
     color: black;
+    padding: 5rem;
 }
 
 .popup-content {
@@ -201,17 +211,31 @@ footer {
 
 .services li.selected {
     text-align: right;
-    background-color: #666666;
+    background-color: #b37575b6;
+    border-radius: 5px;
 }
 
 .requirements {
     flex: 2;
     padding: 20px;
-}
+  }
 
-.requirements h2 {
+  .requirements h2 {
     margin-top: 0;
-}
+  }
+
+  .requirements li.has-sublist {
+    font-weight: bold;
+    list-style-type: none;
+    font-size: 1.4rem;
+  }
+
+  .requirements li.has-sublist > ul {
+    list-style-type: disc;
+    padding-left: 20px;
+    font-weight: normal; /* Ensure sublist items are not bold */
+    font-size: 1.2rem;
+  }
 
 @media screen and (max-width: 768px) {
     .grid {
