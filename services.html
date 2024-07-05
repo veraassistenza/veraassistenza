@@ -69,12 +69,12 @@
                                                             {text: 'Codice fiscale'}, 
                                                             {text: 'Carta soggiorno/Permesso di soggiorno'}, 
                                                             {text: 'SPID'}])">Test Italiano</li>
-                                <li onclick="showRequirements(this, 'Ricongiungimento Familiare (Petition)', ['Carta d\'identità', 'Codice fiscale', 'Permesso di soggiorno', 'Passaporto', 'CUD/730/UNICO/Bollettini INPS', 'Busta paga', 'Contratto di casa', 'Idoneità alloggiativa', 'S2 e Carta d\'identità del proprietario'])">Ricongiungimento Familiare</li>
-                                <li onclick="showRequirements(this, 'Service A', [
-                                {text: 'Requirement 1 for Service A', sublist: ['Sub-requirement 1.1', 'Sub-requirement 1.2']},
-                                {text: 'Requirement 2 for Service A'},
-                                {text: 'Requirement 3 for Service A', sublist: ['Sub-requirement 3.1']}
-                              ])">Cittadinanza</li>
+                                <li onclick="showRequirements(this, 'Ricongiungimento Familiare (Petition)', [{text: 'Richiedente:',
+                                                            sublist: ['Carta d\'identità', 'Codice fiscale', 'Permesso di soggiorno', 'Passaporto', 'CUD/730/UNICO/Bollettini INPS', 'Busta paga', 'Contratto di casa', 'Idoneità alloggiativa', 'S2 e carta d\'identità del proprietario', 'S3 e carta d\identità del datore di lavoro', 'Contratto di lavoro', 'Marca da bollo (€16)', 'Certificato di stato di famiglia']},
+                                                            {text: 'Persona da ricongiungere:', sublist: ['Passaporto (Filippine)']}])">Ricongiungimento Familiare (Petition)</li>
+                                <li onclick="showRequirements(this, 'Cittadinanza', [
+                                {text: '', sublist: ['Carta d\'identità', 'Codice fiscale', 'Permesso di soggiorno/Carta soggiorno', 'Passaporto', 'Ultimi 3 CUD/730/Modello unico', 'Certificato di residenza storico', 'Bollettino postale (€250)', 'Marca da bollo (€16)', 'SPID']},
+                                {text: 'Da apostillare: DFA', sublist: ['NBI', 'Birth certificate', 'Marriage contract (if married)']}])">Cittadinanza</li>
                                 <li onclick="showRequirements(this, 'Accompagnamento', ['Requirement 1', 'Requirement 2', 'Requirement 3'])">Accompagnamento</li>
                             </ul>
                         </div>
@@ -95,7 +95,34 @@
                     <div class="container-services">
                         <div class="popup-content-imm">
                             <ul class="services" id="cafservices">
-                                <!-- Add CAF services here -->
+                                <li onclick="showRequirements(this, 
+                                            'ISEE 2024', 
+                                            [{text: 'Carta d\'identità e codice fiscale (persone nello stato di famiglia)'}, 
+                                            {text: 'CUD 2023 / Redditi 2022'}, 
+                                            {text: 'Saldo final e giacenza media 2022 (estratto conto della banca)'}, 
+                                            {text: 'Contratto di casa (con registrazione)'}, 
+                                            {text: 'Se in mutuo, visura catastale + capitale residuo'}, 
+                                            {text: 'Targa macchina / motorino'}, 
+                                            {text: 'Certificato di invalidità (se c\'è)'}])">ISEE 2024</li>
+                                <li onclick="showRequirements(this,
+                                            'Modello Unico/730', 
+                                            [{text: 'Carta d\'identità'},
+                                            {text: 'Codice fiscale'},
+                                            {text: 'Codice fiscale (famiglia a carico)'},
+                                            {text: 'CUD (present)'},
+                                            {text: 'Contratto di casa (con registrazione)'},
+                                            {text: 'Se in mutuo, contratto di compravendita/mutuo e interessi passivi'},
+                                            {text: 'Premi per assicurazione'},
+                                            {text: 'Spese mediche'},
+                                            {text: 'Spese scolastiche'},
+                                            {text: 'Spese sportive(figli)'},
+                                            {text: 'Spese abbonamento ATM'}
+                                            ])">Modello Unico/730</li>
+                                <li onclick="showRequirements(this, 
+                                            'Carta Acquisti (minore di 3 anni/65 anni)', 
+                                            [{text: 'Carta d\'identità'}, 
+                                            {text: 'Codice fiscale'}, 
+                                            {text: 'Permesso di soggiorno/Carta soggiorno (genitore/richiedente)'}])">Carta Acquisti</li>
                             </ul>
                         </div>
                         <div class="requirements" id="requirementsCaf">
