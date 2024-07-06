@@ -2,7 +2,7 @@ window.addEventListener('scroll', function() {
     const scrollPosition = window.scrollY;
     const rotationFactor = 0.17; // rate at which the gradient rotates
     const degree = (135 + scrollPosition * rotationFactor) % 360; // Start from 135 degrees
-    document.body.style.background = `linear-gradient(${degree}deg, white, red)`;
+    document.body.style.background = `linear-gradient(${degree}deg, #d09393 10%, #da1313 90%)`;
     document.body.style.backgroundAttachment = 'fixed';
 });
 
