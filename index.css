@@ -114,8 +114,8 @@ body {
 }
 
 .container {
-    max-width: 1200px;
-    margin: 0 auto;
+    max-width: 50%;
+    margin: auto;
 }
 
 header > .container {
@@ -248,8 +248,9 @@ button:hover {
 }
 
 .grid {
+    height: 100%;
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    grid-template-columns: repeat(3, 1fr);
     gap: 1rem;
 }
 
@@ -282,48 +283,14 @@ footer p {
     font-size: 0.6rem;
 }
 
-/* Media queries for responsiveness */
-@media (max-width: 768px) {
-    nav ul {
-        flex-direction: column;
-    }
 
-    nav ul li {
-        margin: 1rem 0;
-    }
-
-    .top-right-icon {
-        display: none;
-    }
-
-    /* #blob-one {
-        display: none;
-    } */
-
-    .bottom-right-icon {
-        display: none;
-    }
-
-    .logo-services {
-        width: 30vw; /* Adjusted for smaller screens */
-    }
-
-    #home {
-        height: 50vh;
-    }
-
-    #home > .container {
-        margin-top: 4rem; /* Increase top margin for logo */
-        padding: 2rem;
-        flex-direction: column;
-    }
-
-    .grid {
-        grid-template-columns: 1fr;
-    }
-}
 
 /* Services */
+#ourservicesh2 {
+    font-size: 2.5rem;
+    letter-spacing: 0.4rem;
+}
+
 main {
     flex: 1;
     padding: 2rem 0;
@@ -347,6 +314,10 @@ main {
 #services {
     height: 100vh;
     align-content: center;
+}
+
+#services .container {
+    height: 100%;
 }
 
 /* NOTE: Check later on. Popups don't need to be blurred*/
@@ -441,4 +412,45 @@ main {
     padding-left: 20px;
     font-weight: normal; /* Ensure sublist items are not bold */
     font-size: 1.2rem;
+}
+
+/* Media queries for responsiveness */
+@media (max-width: 768px) {
+    nav ul {
+        flex-direction: column;
+    }
+
+    nav ul li {
+        margin: 1rem 0;
+    }
+
+    .top-right-icon {
+        display: none;
+    }
+
+    /* #blob-one {
+        display: none;
+    } */
+
+    .bottom-right-icon {
+        display: none;
+    }
+
+    .logo-services {
+        width: 30vw; /* Adjusted for smaller screens */
+    }
+
+    #home {
+        height: 50vh;
+    }
+
+    #home > .container {
+        margin-top: 4rem; /* Increase top margin for logo */
+        padding: 2rem;
+        flex-direction: column;
+    }
+
+    .grid {
+        grid-template-columns: 1fr;
+    }
 }
