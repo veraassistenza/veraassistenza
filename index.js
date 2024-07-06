@@ -96,8 +96,8 @@ document.addEventListener("DOMContentLoaded", function() {
     });
 });
 
-function showRequirements(element, serviceName, requirements = []) {
-    var requirementSection = document.getElementById('requirements');
+function showRequirements(element, category, serviceName, requirements = []) {
+    var requirementSection = document.getElementById('requirements' + category);
     var requirementTitle = document.createElement('h2');
     requirementTitle.textContent = serviceName;
 
