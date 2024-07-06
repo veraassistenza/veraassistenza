@@ -294,6 +294,7 @@ footer p {
 
     #home > .container {
         margin-top: 4rem; /* Increase top margin for logo */
+        padding: 2rem;
         flex-direction: column;
     }
 
