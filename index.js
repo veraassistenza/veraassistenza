@@ -19,7 +19,7 @@ document.addEventListener('DOMContentLoaded', function() {
             
             // Show the content with a smooth transition
             content.classList.add('visible');
-        }, 2500); // Delay of 2.5 seconds
+        }, 1800);
     };
 });
 /* Loading screen end */
