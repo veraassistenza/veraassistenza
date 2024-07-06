@@ -97,11 +97,11 @@
 
 /* Default gradient for every page */
 body {
+    font-family: "DM Sans", sans-serif;
     height: 100%;
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: Arial, sans-serif;
     line-height: 1.6;
     background: linear-gradient(135deg, #d09393 10%, #da1313 90%);
     background-size: cover;
