@@ -16,23 +16,85 @@
     border-radius: 4px;
 }
 
-* {
-    color: white;
+/* Simple animations */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
 }
 
-html, body {
-    height: 100%;
+@keyframes slideDown {
+    from {
+        transform: translate(-50%, -40%);
+        opacity: 0;
+    }
+    to {
+        transform: translate(-50%, -50%);
+        opacity: 1;
+    }
 }
+
+
+* {
+    color: white;
+    transition: all 0.5s ease-in-out;
+}
+
+/* Loading screen start*/
+#loading-screen {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    background: rgba(46, 46, 46, 0.84);
+    backdrop-filter: blur(10px); /* Blur effect */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    z-index: 9999;
+    transition: opacity 0.5s ease-in-out; /* Smooth transition */
+}
+
+#loading-screen.hidden {
+    opacity: 0;
+    visibility: hidden;
+}
+
+.spinner {
+    border: 4px solid rgba(0, 0, 0, 0.1);
+    border-top: 4px solid #a21d1d;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    animation: spin 1s linear infinite;
+    margin-bottom: 20px;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+#content.visible {
+    display: block;
+    opacity: 1;
+}
+/* Loading screen end */
 
 /* Default gradient for every page */
 body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
     box-sizing: border-box;
     font-family: Arial, sans-serif;
     line-height: 1.6;
-    display: grid;
-    grid-template-rows: auto 1fr auto;
-    height: 100vh; /* Set height to ensure scrolling */
-    background: linear-gradient(135deg, #ffffff 1%, #a31616 99%);
+    background: linear-gradient(135deg, #d8b5b5 10%, #f70000 90%);
+    background-size: cover;
+    background-attachment: fixed;
     background-size: 150% 150%;
     transition: background 0.3s ease-in-out;
     overflow-x: hidden;
@@ -40,16 +102,25 @@ body {
     flex-direction: column;
 }
 
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
 header > .container {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    max-width: none;
+    font-size: 1.5rem;
 }
 
 #home > .container {
-    flex-direction: column;
     align-items: start;
-    
+    max-width: none;
+    margin: 0 auto;
+    display: flex;
+    padding: 3rem 7rem 7rem 7rem;
 }
 
 .top-right-icon {
@@ -82,35 +153,20 @@ header > .container {
     transform: rotate(19deg);
 }
 
-.container {
-    max-width: 1200px;
-    margin: 0 auto;
-}
-
-header>.container {
-    max-width: none;
-    font-size: 1.5rem; 
-}
-
-#home>.container {
-    max-width: none;
-    margin: 0 auto;
-    display: flex;
+.left, .right {
+    flex: 1;
 }
 
 .left img, .right img {
     max-width: 100%; /* Ensures images resize properly */
     height: auto; /* Maintains aspect ratio */
-    align-content: center;
 }
 
 .fit-image {
     max-width: 100%;
     height: auto;
     display: block;
-    margin: 0;
-    width: 90%; /* Increase image size */
-    max-height: 100vh; /* Limit height to 80% of viewport height */
+    margin: 0 auto;
 }
 
 .right img {
@@ -119,7 +175,6 @@ header>.container {
 
 header {
     background: none;
-    /* padding: 1rem 0; */
 }
 
 header>div>h1>a {
@@ -133,7 +188,6 @@ header h1 {
 
 nav ul {
     display: flex;
-    /* justify-content: center; */
     list-style: none;
 }
 
@@ -146,10 +200,6 @@ nav ul li a {
     text-decoration: none;
     font-weight: bold;
 }
-
-/* main {
-    padding: 2rem 0;
-} */
 
 h2 {
     text-align: center;
@@ -183,13 +233,6 @@ button:hover {
     gap: 1rem;
 }
 
-.card {
-    /* background: #FAF9F6; */
-    padding: 1rem;
-    text-align: center;
-}
-
-/* services cards */
 section .card a,
 section .card a img,
 section .card a p {
@@ -211,10 +254,12 @@ footer {
     text-align: center;
     padding: 1rem 0;
     width: 100%;
+    background: none;
 }
 
 footer p {
-    color: #faf9f6c7;
+    color: #faf9f66e;
+    font-size: 0.6rem;
 }
 
 /* Media queries for responsiveness */
@@ -243,7 +288,136 @@ footer p {
         width: 30vw; /* Adjusted for smaller screens */
     }
 
+    #home {
+        height: 50vh;
+    }
+
     #home > .container {
         margin-top: 4rem; /* Increase top margin for logo */
+        flex-direction: column;
     }
+
+    .grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* Services */
+main {
+    flex: 1;
+    padding: 2rem 0;
+    width: 100%;
+    transition: filter 0.3 ease-in-out;
+}
+
+.card {
+    padding: 1rem;
+    text-align: center;
+    border-radius: 8px;
+    opacity: 0;
+    animation: fadeIn 1s forwards;
+}
+
+.card a p {
+    letter-spacing: 1.5px;
+}
+
+/* Popups */
+#services {
+    height: 100vh;
+    align-content: center;
+}
+
+/* NOTE: Check later on. Popups don't need to be blurred*/
+/* body.popup-active {
+    filter:  blur(5px);
+}
+
+ */
+.popup {
+    display: flex;
+    position: fixed;
+    z-index: 9999;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 80vw;
+    height: 80vh;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(141, 78, 78, 0.9);
+    border-radius: 10px;
+    color: black;
+    padding: 5rem;
+    animation: slideDown 0.5s forwards;
+}
+
+.popup-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+}
+
+.popup-content h1 {
+    margin-top: 0;
+    text-align: center;
+}
+
+.close-btn {
+    position: absolute;
+    top: 10px;
+    right: 20px;
+    font-size: 24px;
+    cursor: pointer;
+}
+
+.container-services {
+    display: flex;
+    max-width: 800px;
+    overflow: hidden;
+}
+
+.services {
+    flex: 1;
+    padding: 20px;
+    list-style-type: none;
+    margin: 0;
+    overflow-y: auto;
+}
+
+.services li {
+    cursor: pointer;
+    padding: 10px;
+    transition: background-color 0.3s;
+}
+
+.services li.selected {
+    text-align: right;
+    background-color: #b37575b6;
+    border-radius: 5px;
+}
+
+.requirements {
+    flex: 2;
+    padding: 20px;
+}
+
+.requirements h2 {
+    margin-top: 0;
+}
+
+.requirements li.has-sublist {
+    font-weight: bold;
+    list-style-type: none;
+    font-size: 1.4rem;
+}
+
+.requirements li.has-sublist > ul {
+    list-style-type: disc;
+    padding-left: 20px;
+    font-weight: normal; /* Ensure sublist items are not bold */
+    font-size: 1.2rem;
 }
