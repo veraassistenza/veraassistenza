@@ -33,7 +33,7 @@
                 <li><a href="#contact">Contact Us</a></li>
             </ul>
         </div>
-
+        <!-- header -->
         <header>
             <div class="container">
                 <!-- <h1><a href="index.html">VERA Assistenza</a></h1> -->
@@ -49,6 +49,7 @@
         </header>
         
         <main>
+            <!-- home -->
             <section id="home">
                 <div class="container">
                     <div class="left"> <!-- Vera Assistenza logo -->
@@ -58,6 +59,7 @@
                     </div>
                 </div>
             </section>
+            <!-- services -->
             <section id="services">
                 <div class="container">
                     <h2 id="ourservicesh2">OUR SERVICES</h2>
@@ -84,7 +86,7 @@
                     </div>
                 </div>
             </section>
-        
+            <!-- popups -->
             <section id="immigrazione">
                 <div id="popupImm" class="popup" style="display: none;">
                     <div class="popup-content">
@@ -100,7 +102,7 @@
                                                                 {text: 'Carta d\'identità'},
                                                                 {text: 'Codice fiscale'},
                                                                 {text: 'Contratto di lavoro(UNILAV)/Denuncia rapporto di lavoro'},
-                                                                {text: 'Ultime 3 buste paghe o bollettini INPS'},
+                                                                {text: 'Ultime 3 buste paga o bollettini INPS'},
                                                                 {text: 'CUD'},
                                                                 {text: 'Documenti personali dei figli (se ci sono figli meno di 14 anni)'}])">Rinnovo/Rilascio del Permesso di Soggiorno</li>
                                     <li onclick="showRequirements(this, '',
@@ -124,7 +126,14 @@
                                     <li onclick="showRequirements(this, '', 'Cittadinanza', [
                                     {text: '', sublist: ['Carta d\'identità', 'Codice fiscale', 'Permesso di soggiorno/Carta soggiorno', 'Passaporto', 'Ultimi 3 CUD/730/Modello unico', 'Certificato di residenza storico', 'Bollettino postale (€250)', 'Marca da bollo (€16)', 'SPID']},
                                     {text: 'Da apostillare: DFA', sublist: ['NBI', 'Birth certificate', 'Marriage contract (if married)']}])">Cittadinanza</li>
-                                    <li onclick="showRequirements(this, '', 'Accompagnamento', [{text: 'Carta'}])">Accompagnamento</li>
+                                    <li onclick="showRequirements(this, '', 'Accompagnamento', [{text: 'Coming soon'},
+                                                                /* {text: 'Carta d\'identità'},
+                                                                {text: 'Codice fiscale'},
+                                                                {text: 'Permesso di soggiorno'},
+                                                                {text: 'Passaporto'},
+                                                                {text: 'Contratto di lavoro'},
+                                                                {text: 'Ultime 3 buste paghe'},
+                                                                {text: 'Documentazione del figlio (se minorenne)'} */])">Accompagnamento</li>
                                 </ul>
                             </div>
                             <div class="requirements" id="requirements">
@@ -164,7 +173,7 @@
                                                 {text: 'Premi per assicurazione'},
                                                 {text: 'Spese mediche'},
                                                 {text: 'Spese scolastiche'},
-                                                {text: 'Spese sportive(figli)'},
+                                                {text: 'Spese sportive (figli)'},
                                                 {text: 'Spese abbonamento ATM'}
                                                 ])">Modello Unico/730</li>
                                     <li onclick="showRequirements(this, 'Caf',
@@ -172,6 +181,51 @@
                                                 [{text: 'Carta d\'identità'},
                                                 {text: 'Codice fiscale'},
                                                 {text: 'Permesso di soggiorno/Carta soggiorno (genitore/richiedente)'}])">Carta Acquisti</li>
+                                    <li onclick="showRequirements(this, 'Caf',
+                                                'Red ICI',
+                                                [{text: 'Coming soon'}/* ,
+                                                {text: 'Carta d\'identità'},
+                                                {text: 'Codice fiscale'},
+                                                {text: 'Documento di proprietà'},
+                                                {text: 'Certificato di residenza'},
+                                                {text: 'Dichiarazione di variazione'} */])">Red ICI</li>
+                                    <li onclick="showRequirements(this, 'Caf',
+                                                'Contratti di Affitto',
+                                                [{text: 'Coming soon'}/* ,
+                                                {text: 'Carta d\'identità'},
+                                                {text: 'Codice fiscale'},
+                                                {text: 'Contratto di affitto'},
+                                                {text: 'Certificato di registrazione'} */])">Contratti di Affitto</li>
+                                    <li onclick="showRequirements(this, 'Caf',
+                                                'Successioni',
+                                                [{text: 'Coming soon'}/* ,
+                                                {text: 'Carta d\'identità'},
+                                                {text: 'Codice fiscale'},
+                                                {text: 'Certificato di morte'},
+                                                {text: 'Certificato di proprietà'},
+                                                {text: 'Dichiarazione di successione'} */])">Successioni</li>
+                                    <li onclick="showRequirements(this, 'Caf',
+                                                'Calcolo TFR',
+                                                [{text: 'Coming soon'}/* ,
+                                                {text: 'Carta d\'identità'},
+                                                {text: 'Codice fiscale'},
+                                                {text: 'Contratto di lavoro'},
+                                                {text: 'Ultima busta paga'},
+                                                {text: 'Documento di cessazione'} */])">Calcolo TFR</li>
+                                    <li onclick="showRequirements(this, 'Caf',
+                                                'Apertura e Chiusura Partita IVA',
+                                                [{text: 'Carta d\'identità'},
+                                                {text: 'Codice fiscale'},
+                                                {text: 'Modulo di richiesta'},
+                                                {text: 'Documento di registrazione'}])">Apertura e Chiusura Partita IVA</li>
+                                    <li onclick="showRequirements(this, 'Caf',
+                                                'Gestione Contabilità',
+                                                [{text: 'Coming soon'}/* ,
+                                                {text: 'Carta d\'identità'},
+                                                {text: 'Codice fiscale'},
+                                                {text: 'Documentazione fiscale'},
+                                                {text: 'Registri contabili'},
+                                                {text: 'Fatture e ricevute'} */])">Gestione Contabilità</li>
                                 </ul>
                             </div>
                             <div class="requirements" id="requirementsCaf">
@@ -191,7 +245,64 @@
                         <div class="container-services">
                             <div class="popup-content-imm">
                                 <ul class="services" id="patronatoservices">
-                                    <!-- Add Patronato services here -->
+                                    <li onclick="showRequirements(this, 'Patronato',
+                                                        'Pensioni e Contributi',
+                                                        [{text: 'Carta d\'identità'},
+                                                        {text: 'Codice fiscale'},
+                                                        {text: 'Permesso di soggiorno/Carta soggiorno'},
+                                                        {text: 'Estratto conto contributivo'},
+                                                        {text: 'Documenti pensionistici precedenti'}])">Pensioni e Contributi</li>
+                        <li onclick="showRequirements(this, 'Patronato',
+                                                        'Disoccupazione',
+                                                        [{text: 'Carta d\'identità'},
+                                                        {text: 'Codice fiscale'},
+                                                        {text: 'Permesso di soggiorno/Carta soggiorno'},
+                                                        {text: 'Certificato di disoccupazione'},
+                                                        {text: 'Ultima busta paga'},
+                                                        {text: 'Dichiarazione di disponibilità al lavoro'}])">Disoccupazione</li>
+                        <li onclick="showRequirements(this, 'Patronato',
+                                                        'Maternità',
+                                                        [{text: 'Carta d\'identità'},
+                                                        {text: 'Codice fiscale'},
+                                                        {text: 'Permesso di soggiorno/Carta soggiorno'},
+                                                        {text: 'Certificato di gravidanza'},
+                                                        {text: 'Ultima busta paga'},
+                                                        {text: 'Modulo di richiesta maternità'}])">Maternità</li>
+                        <li onclick="showRequirements(this, 'Patronato',
+                                                        'Invalidità e Disabilità',
+                                                        [{text: 'Carta d\'identità'},
+                                                        {text: 'Codice fiscale'},
+                                                        {text: 'Permesso di soggiorno/Carta soggiorno'},
+                                                        {text: 'Certificato di invalidità'},
+                                                        {text: 'Documentazione medica'}])">Invalidità e Disabilità</li>
+                        <li onclick="showRequirements(this, 'Patronato',
+                                                        'Gestione Colf e Badante',
+                                                        [{text: 'Carta d\'identità'},
+                                                        {text: 'Codice fiscale'},
+                                                        {text: 'Permesso di soggiorno/Carta soggiorno'},
+                                                        {text: 'Contratto di lavoro'},
+                                                        {text: 'Ultima busta paga'}])">Gestione Colf e Badante</li>
+                        <li onclick="showRequirements(this, 'Patronato',
+                                                        'CUD',
+                                                        [{text: 'Carta d\'identità'},
+                                                        {text: 'Codice fiscale'},
+                                                        {text: 'Permesso di soggiorno/Carta soggiorno'},
+                                                        {text: 'Documentazione fiscale'}])">CUD</li>
+                        <li onclick="showRequirements(this, 'Patronato',
+                                                        'Buste Paga',
+                                                        [{text: 'Carta d\'identità'},
+                                                        {text: 'Codice fiscale'},
+                                                        {text: 'Permesso di soggiorno/Carta soggiorno'},
+                                                        {text: 'Contratto di lavoro'},
+                                                        {text: 'Ultima busta paga'}])">Buste Paga</li>
+                        <li onclick="showRequirements(this, 'Patronato',
+                                                        'ACCAS - Pensione Sociale',
+                                                        [{text: 'Più di 67 anni con almeno 5 anni contributi'},
+                                                        {text: 'Carta d\'identità'},
+                                                        {text: 'Codice fiscale'},
+                                                        {text: 'Permesso di soggiorno/Carta soggiorno'},
+                                                        {text: 'Documentazione pensionistica'},
+                                                        {text: 'Ultima busta paga'}])">ACCAS - Pensione Sociale</li>
                                 </ul>
                             </div>
                             <div class="requirements" id="requirementsPatronato">

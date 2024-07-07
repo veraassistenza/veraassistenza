@@ -113,10 +113,39 @@ body {
     flex-direction: column;
 }
 
+header {
+    background: none;
+}
+
+header>div>h1>a {
+    text-decoration: none;
+    color: black;
+}
+
+header h1 {
+    text-align: center;
+}
+
+nav ul {
+    display: flex;
+    list-style: none;
+}
+
+nav ul li {
+    margin: 0 2.5rem;
+}
+
+nav ul li a {
+    color: rgb(59, 59, 59);
+    text-decoration: none;
+    font-weight: bold;
+}
+
 .container {
     max-width: 1200px;
     margin: 0 auto;
 }
+
 
 header > .container {
     display: flex;
@@ -197,33 +226,7 @@ header > .container {
     width: 100%;
 }
 
-header {
-    background: none;
-}
 
-header>div>h1>a {
-    text-decoration: none;
-    color: black;
-}
-
-header h1 {
-    text-align: center;
-}
-
-nav ul {
-    display: flex;
-    list-style: none;
-}
-
-nav ul li {
-    margin: 0 2.5rem;
-}
-
-nav ul li a {
-    color: rgb(59, 59, 59);
-    text-decoration: none;
-    font-weight: bold;
-}
 
 h2 {
     text-align: center;
@@ -401,7 +404,7 @@ main {
     }
 
     #home {
-        height: 100vh;
+        height: 60vh;
     }
 
     .menu-button,
