@@ -20,6 +20,20 @@
         <div class="spinner"></div>
     </div>
     <div id="content">
+
+        <!-- Small screen buton -->
+        <button class="menu-button" id="menuButton">☰</button>
+        <!-- Small screen popup -->
+        <div class="popup-menu" id="popupMenu">
+            <button class="menu-button hidden" id="closeButton">✖</button>
+            <ul>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About Us</a></li>
+                <li><a href="#services">Our Services</a></li>
+                <li><a href="#contact">Contact Us</a></li>
+            </ul>
+        </div>
+
         <header>
             <div class="container">
                 <!-- <h1><a href="index.html">VERA Assistenza</a></h1> -->
@@ -110,7 +124,7 @@
                                     <li onclick="showRequirements(this, '', 'Cittadinanza', [
                                     {text: '', sublist: ['Carta d\'identità', 'Codice fiscale', 'Permesso di soggiorno/Carta soggiorno', 'Passaporto', 'Ultimi 3 CUD/730/Modello unico', 'Certificato di residenza storico', 'Bollettino postale (€250)', 'Marca da bollo (€16)', 'SPID']},
                                     {text: 'Da apostillare: DFA', sublist: ['NBI', 'Birth certificate', 'Marriage contract (if married)']}])">Cittadinanza</li>
-                                    <li onclick="showRequirements(this, 'Accompagnamento', ['Requirement 1', 'Requirement 2', 'Requirement 3'])">Accompagnamento</li>
+                                    <li onclick="showRequirements(this, '', 'Accompagnamento', [{text: 'Carta'}])">Accompagnamento</li>
                                 </ul>
                             </div>
                             <div class="requirements" id="requirements">
@@ -134,7 +148,7 @@
                                                 'ISEE 2024',
                                                 [{text: 'Carta d\'identità e codice fiscale (persone nello stato di famiglia)'},
                                                 {text: 'CUD 2023 / Redditi 2022'},
-                                                {text: 'Saldo final e giacenza media 2022 (estratto conto della banca)'},
+                                                {text: 'Saldo finale e giacenza media 2022 (estratto conto della banca)'},
                                                 {text: 'Contratto di casa (con registrazione)'},
                                                 {text: 'Se in mutuo, visura catastale + capitale residuo'},
                                                 {text: 'Targa macchina / motorino'},

@@ -144,3 +144,59 @@ document.querySelectorAll('.popup ul li').forEach(li => {
         li.style.fontWeight = 'bold'; // Make the parent list item bold
     }
 });
+
+/* Smaller screens ver. start*/
+document.addEventListener('DOMContentLoaded', function() {
+    var menuButton = document.getElementById('menuButton');
+    var closeButton = document.getElementById('closeButton');
+    var popupMenu = document.getElementById('popupMenu');
+
+    function toggleMenu() {
+        popupMenu.classList.toggle('show');
+        menuButton.classList.toggle('hidden');
+        closeButton.classList.toggle('hidden');
+    }
+
+    menuButton.addEventListener('click', function() {
+        toggleMenu();
+    });
+
+    closeButton.addEventListener('click', function() {
+        toggleMenu();
+    });
+
+    window.addEventListener('click', function(event) {
+        if (event.target !== menuButton && event.target !== closeButton && !popupMenu.contains(event.target)) {
+            popupMenu.classList.remove('show');
+            menuButton.classList.remove('hidden');
+            closeButton.classList.add('hidden');
+        }
+    });
+
+    // Close popup menu on section click and then scroll smoothly
+    document.querySelectorAll('.popup-menu ul li a').forEach(link => {
+        link.addEventListener('click', function(event) {
+            event.preventDefault();
+            var targetId = this.getAttribute('href').substring(1);
+            var targetElement = document.getElementById(targetId);
+
+            // Close the popup menu first
+            popupMenu.classList.remove('show');
+            menuButton.classList.remove('hidden');
+            closeButton.classList.add('hidden');
+
+            // Scroll to the target section after a short delay
+            setTimeout(function() {
+                targetElement.scrollIntoView({
+                    behavior: 'smooth',
+                    block: 'start'
+                });
+            }, 300); // Adjust the timeout as needed for a smoother experience
+        });
+    });
+});
+
+
+
+
+/* Smaller screens ver. end */
