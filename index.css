@@ -585,7 +585,7 @@ main {
     position: fixed;
     z-index: 9997;
     background-color: rgba(141, 78, 78, 0.9);
-    color: rgb(43, 43, 43);
+    color: white;
     top: 0;
     right: 0;
     width: 100vw; /* Full width */
@@ -620,7 +620,7 @@ main {
 }
 
 .popup-menu ul li a {
-    color: rgb(32, 32, 32);
+    color: white;
     text-decoration: none;
     font-size: 1.5rem;
 }
