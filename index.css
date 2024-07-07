@@ -238,7 +238,8 @@ p {
     margin-bottom: 1rem;
 }
 
-#ourservicesh2 {
+#ourservicesh2,
+#contactush2 {
     font-size: 3rem;
     letter-spacing: 0.3rem;
 }
@@ -343,6 +344,7 @@ main {
     color: black;
     padding: 5rem;
     animation: slideDown 0.5s forwards;
+    overflow-y: auto;
 }
 
 .popup-content {
@@ -467,6 +469,18 @@ main {
         z-index: 9998;
         font-size: 1.5rem;
         line-height: 1;
+    }
+    
+    /* Adjust container services for smaller screens */
+    .container-services {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+    }
+
+    .popup {
+        width: 80vw;
+        height: 80vh;
     }
 
     .popup-menu {
