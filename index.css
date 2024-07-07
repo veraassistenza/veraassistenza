@@ -366,8 +366,9 @@ main {
     right: 20px;
     font-size: 24px;
     cursor: pointer;
+    z-index: 10002; /* Ensure it is above other elements */
+    color: white; /* Ensure it is visible on your background */
 }
-
 .container-services {
     display: flex;
     width: 70%;
@@ -445,6 +446,14 @@ main {
     color: #da1313;
 }
 
+.mobile-divider {
+    display: none;
+    border: none;
+    border-top: 1px solid rgba(255, 255, 255, 0.223);
+    width: 80%;
+    margin: 20px auto;
+}
+
 /* Media queries for responsiveness */
 @media (max-width: 768px) {
     header {
@@ -470,6 +479,12 @@ main {
         font-size: 1.5rem;
         line-height: 1;
     }
+
+    .close-btn {
+        display: block;
+        top: 2px;
+        right: 15px;
+    }
     
     /* Adjust container services for smaller screens */
     .container-services {
@@ -479,8 +494,13 @@ main {
     }
 
     .popup {
-        width: 80vw;
-        height: 80vh;
+        width: 90vw;
+        height: 90vh;
+        padding: 1rem;
+    }
+
+    .popup h1 {
+        font-size: 1.5rem;
     }
 
     .popup-menu {
@@ -576,6 +596,10 @@ main {
         transition: opacity 0.5s ease-in-out;
         bottom: 2.5rem;
         right: 1.1rem;
+    }
+    
+    .mobile-divider {
+        display: block;
     }
 }
 
