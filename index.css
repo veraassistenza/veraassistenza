@@ -450,6 +450,12 @@ main {
     margin: 20px auto;
 }
 
+/* Contact Us */
+#contact {
+    height: 60vh;
+    align-content: center;
+}
+
 /* Media queries for responsiveness */
 @media (max-width: 768px) {
     header {
