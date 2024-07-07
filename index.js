@@ -210,3 +210,43 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 });
 /* Smaller screens ver. end */
+
+// Scroll to top button functionality
+var scrollToTopBtn = document.getElementById("scrollToTopBtn");
+var rootElement = document.documentElement;
+
+function handleScroll() {
+    var scrollTotal = rootElement.scrollHeight - rootElement.clientHeight;
+    if ((rootElement.scrollTop / scrollTotal) > 0.1) {
+        scrollToTopBtn.style.display = "block";
+    } else {
+        scrollToTopBtn.style.display = "none";
+    }
+}
+
+function scrollToTop() {
+    scrollToTopBtn.style.display = 'none';
+    rootElement.scrollTo({
+        top: 0,
+        behavior: "smooth"
+    });
+}
+
+scrollToTopBtn.addEventListener("click", scrollToTop);
+document.addEventListener("scroll", handleScroll);
+
+// Move social icons on scroll (for smaller screens)
+window.addEventListener('scroll', function() {
+    const socialIcons = document.querySelector('.social-icons');
+    const homeSection = document.getElementById('home');
+    const homeSectionHeight = homeSection.offsetHeight;
+    const scrollY = window.scrollY;
+
+    if (window.innerWidth <= 768) {
+        if (scrollY > 1) {
+            socialIcons.classList.add('fixed');
+        } else {
+            socialIcons.classList.remove('fixed');
+        }
+    }
+});

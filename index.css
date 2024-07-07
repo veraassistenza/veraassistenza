@@ -274,6 +274,17 @@ footer p {
     font-size: 0.6rem;
 }
 
+.social-icons a img {
+    opacity: 0.8;
+    width: 1rem;
+    height: 1rem;
+    margin: 0 10px;
+}
+
+.social-icons a img:hover {
+    transform: scale(1.2); /* Zoom in by 20% */
+}
+
 /* Services */
 main {
     flex: 1;
@@ -397,6 +408,32 @@ main {
     font-size: 1.2rem;
 }
 
+/* Scroll to top button */
+#scrollToTopBtn {
+    position: fixed;
+    bottom: 40px;
+    right: 40px;
+    z-index: 99;
+    display: none;
+    background-color: transparent;
+    color: white;
+    border: none;
+    outline: none;
+    width: 2rem;
+    height: 2rem;
+    text-align: center;
+    cursor: pointer;
+    border-radius: 50%;
+    font-size: 18px;
+    opacity: 0.8;
+    transition: opacity 0.5s ease-in-out;
+}
+
+#scrollToTopBtn:hover {
+    background-color: transparent;
+    color: #da1313;
+}
+
 /* Media queries for responsiveness */
 @media (max-width: 768px) {
     header {
@@ -404,7 +441,7 @@ main {
     }
 
     #home {
-        height: 60vh;
+        height: 70vh;
     }
 
     .menu-button,
@@ -475,6 +512,47 @@ main {
 
     .grid {
         grid-template-columns: 1fr;
+    }
+
+    footer .container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .social-icons {
+        position: absolute;
+        bottom: 60px;
+        left: 50%;
+        transform: translateX(-50%);
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        width: 100%;
+        transition: all 0.3s ease-in-out;
+    }
+
+    .social-icons.fixed {
+        position: fixed;
+        bottom: 100px;
+        right: 1rem;
+        left: auto;
+        transform: none;
+        flex-direction: column;
+        align-items: flex-end;
+    }
+
+    .social-icons a {
+        margin: 5px 0;
+    }
+
+    .social-icons.visible {
+        display: flex;
+    }
+
+    #scrollToTopBtn {
+        transition: opacity 0.5s ease-in-out;
+        bottom: 2.5rem;
+        right: 1.1rem;
     }
 }
 
