@@ -97,11 +97,11 @@
 
 /* Default gradient for every page */
 body {
-    font-family: "DM Sans", sans-serif;
     height: 100%;
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    font-family: Arial, sans-serif;
     line-height: 1.6;
     background: linear-gradient(135deg, #d09393 10%, #da1313 90%);
     background-size: cover;
@@ -114,8 +114,8 @@ body {
 }
 
 .container {
-    max-width: 50%;
-    margin: auto;
+    max-width: 1200px;
+    margin: 0 auto;
 }
 
 header > .container {
@@ -248,9 +248,8 @@ button:hover {
 }
 
 .grid {
-    height: 100%;
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
     gap: 1rem;
 }
 
@@ -283,14 +282,48 @@ footer p {
     font-size: 0.6rem;
 }
 
+/* Media queries for responsiveness */
+@media (max-width: 768px) {
+    nav ul {
+        flex-direction: column;
+    }
 
+    nav ul li {
+        margin: 1rem 0;
+    }
 
-/* Services */
-#ourservicesh2 {
-    font-size: 2.5rem;
-    letter-spacing: 0.4rem;
+    .top-right-icon {
+        display: none;
+    }
+
+    /* #blob-one {
+        display: none;
+    } */
+
+    .bottom-right-icon {
+        display: none;
+    }
+
+    .logo-services {
+        width: 30vw; /* Adjusted for smaller screens */
+    }
+
+    #home {
+        height: 50vh;
+    }
+
+    #home > .container {
+        margin-top: 4rem; /* Increase top margin for logo */
+        padding: 2rem;
+        flex-direction: column;
+    }
+
+    .grid {
+        grid-template-columns: 1fr;
+    }
 }
 
+/* Services */
 main {
     flex: 1;
     padding: 2rem 0;
@@ -314,10 +347,6 @@ main {
 #services {
     height: 100vh;
     align-content: center;
-}
-
-#services .container {
-    height: 100%;
 }
 
 /* NOTE: Check later on. Popups don't need to be blurred*/
@@ -412,45 +441,4 @@ main {
     padding-left: 20px;
     font-weight: normal; /* Ensure sublist items are not bold */
     font-size: 1.2rem;
-}
-
-/* Media queries for responsiveness */
-@media (max-width: 768px) {
-    nav ul {
-        flex-direction: column;
-    }
-
-    nav ul li {
-        margin: 1rem 0;
-    }
-
-    .top-right-icon {
-        display: none;
-    }
-
-    /* #blob-one {
-        display: none;
-    } */
-
-    .bottom-right-icon {
-        display: none;
-    }
-
-    .logo-services {
-        width: 30vw; /* Adjusted for smaller screens */
-    }
-
-    #home {
-        height: 50vh;
-    }
-
-    #home > .container {
-        margin-top: 4rem; /* Increase top margin for logo */
-        padding: 2rem;
-        flex-direction: column;
-    }
-
-    .grid {
-        grid-template-columns: 1fr;
-    }
 }
