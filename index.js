@@ -194,9 +194,19 @@ document.addEventListener('DOMContentLoaded', function() {
             }, 300); // Adjust the timeout as needed for a smoother experience
         });
     });
+
+    // Smooth scroll for desktop menu
+    document.querySelectorAll('nav ul li a').forEach(link => {
+        link.addEventListener('click', function(event) {
+            event.preventDefault();
+            var targetId = this.getAttribute('href').substring(1);
+            var targetElement = document.getElementById(targetId);
+
+            targetElement.scrollIntoView({
+                behavior: 'smooth',
+                block: 'start'
+            });
+        });
+    });
 });
-
-
-
-
 /* Smaller screens ver. end */
