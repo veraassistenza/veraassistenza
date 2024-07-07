@@ -65,7 +65,7 @@
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    z-index: 9999;
+    z-index: 99999;
     transition: opacity 0.5s ease-in-out; /* Smooth transition */
 }
 
@@ -227,7 +227,6 @@ header > .container {
 }
 
 
-
 h2 {
     text-align: center;
     margin-bottom: 1rem;
@@ -237,6 +236,11 @@ h2 {
 p {
     text-align: center;
     margin-bottom: 1rem;
+}
+
+#ourservicesh2 {
+    font-size: 3rem;
+    letter-spacing: 0.3rem;
 }
 
 .grid {
@@ -274,6 +278,11 @@ footer p {
     font-size: 0.6rem;
 }
 
+footer,
+.social-icons {
+    z-index: 10000;
+}
+
 .social-icons a img {
     opacity: 0.8;
     width: 1rem;
@@ -282,7 +291,7 @@ footer p {
 }
 
 .social-icons a img:hover {
-    transform: scale(1.2); /* Zoom in by 20% */
+    transform: scale(1.5);
 }
 
 /* Services */
@@ -320,7 +329,7 @@ main {
 .popup {
     display: flex;
     position: fixed;
-    z-index: 9999;
+    z-index: 10001;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
