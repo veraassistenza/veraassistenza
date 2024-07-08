@@ -673,6 +673,10 @@ main {
         width: 5rem;
     }
 
+    #contact {
+        height: 70vh;
+    }
+
     #contact .contact-background {
         top: 50%; /* Center the background vertically */
         left: 50%;
