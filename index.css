@@ -487,10 +487,37 @@ main {
     margin: 0;
 }
 
+#contact .container {
+    position: relative;
+    display:flex;
+}
+
+#contact .container::after {
+    content: '';
+    background: url('assets/png/contactus.png') no-repeat center center;
+    background-size: contain;
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    width: 50%; /* Adjust the width as needed */
+    opacity: 0.8; /* Adjust the opacity if you want a semi-transparent effect */
+    pointer-events: none; /* Ensure it doesn't interfere with any interactions */
+}
+
 .contactImage {
     width: 100px;
     height: 100px;
 }
+
+/* #contact {
+    position: relative;
+    background: linear-gradient(135deg, #d09393 10%, #da1313 90%);
+    padding: 50px 0;
+    overflow: hidden;
+} */
+
+
 
 /* Media queries for responsiveness */
 @media (max-width: 768px) {
