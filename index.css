@@ -167,6 +167,28 @@ header > .container {
     padding: 3rem 7rem 7rem 7rem;
 }
 
+.main-logo {
+    margin-bottom: 20px; /* Adjust this as needed */
+}
+
+/* .smaller-logos {
+    display: flex;
+    justify-content: center;
+    gap: 10px; Adjust the gap between smaller logos as needed 
+} */
+
+.smaller-logos {
+    display: flex;
+    margin-top: 20px;
+    gap: 10px;
+}
+
+.smaller-logos img {
+    width: 10rem;
+    height: auto;
+    align-self: center;
+}
+
 .top-right-icon {
     position: absolute;
     top: 0px;
@@ -210,8 +232,14 @@ header > .container {
     flex: 1;
 }
 
+.left {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
 .left img, .right img {
-    max-width: 100%; /* Ensures images resize properly */
+    max-width: 75%; /* Ensures images resize properly */
     height: auto; /* Maintains aspect ratio */
 }
 
@@ -453,7 +481,15 @@ main {
 /* Contact Us */
 #contact {
     height: 60vh;
+    display: flex;
     align-content: center;
+    justify-content: space-between;
+    margin: 0;
+}
+
+.contactImage {
+    width: 100px;
+    height: 100px;
 }
 
 /* Media queries for responsiveness */
@@ -602,6 +638,10 @@ main {
     
     .mobile-divider {
         display: block;
+    }
+    
+    .smaller-logos img {
+        width: 5rem;
     }
 }
 
