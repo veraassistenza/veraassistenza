@@ -507,18 +507,9 @@ main {
     pointer-events: none; /* Ensure it doesn't interfere with any interactions */
 }
 
-.contactImage {
-    width: 100px;
-    height: 100px;
+.spacediv {
+    height: 30vh;
 }
-
-/* #contact {
-    position: relative;
-    background: linear-gradient(135deg, #d09393 10%, #da1313 90%);
-    padding: 50px 0;
-    overflow: hidden;
-} */
-
 
 
 /* Media queries for responsiveness */
