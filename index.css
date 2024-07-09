@@ -650,6 +650,18 @@ main {
         height: 70vh;
     }
 
+    #contact .container {
+        padding-bottom: 2rem; /* Add padding to the bottom of the container */
+    }
+
+    .map-container > div {
+        margin-bottom: 2rem; /* Add margin to the bottom of each map container */
+    }
+
+    .spacer {
+        height: 4rem; /* Spacer height, adjust as needed */
+    }
+
     .spacediv {
         height: 10vh;
     }
