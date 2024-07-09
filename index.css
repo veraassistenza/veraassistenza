@@ -473,16 +473,24 @@ main {
     flex-direction: column;
 }
 
-#contact .contact-background {
-    position: absolute;
-    top: 4rem; /* Adjust this value based on the height of your H1 */
-    right: -4rem;
-    bottom: -2.5rem;
-    width: 50%; /* Adjust the width as needed */
-    background: url('assets/png/contactus.png') no-repeat center center;
-    background-size: contain;
-    opacity: 0.8; /* Adjust the opacity if you want a semi-transparent effect */
-    pointer-events: none; /* Ensure it doesn't interfere with any interactions */
+#contact .container .map-container {
+    margin-top: 5rem;
+    display: flex;
+    justify-content: center; /* Center the iframes horizontally */
+    gap: 1rem;
+    align-items: center;
+    flex-wrap: wrap; /* Ensure they wrap on smaller screens */
+}
+
+.maps {
+    border-radius: 10px;
+    margin: 0 auto; /* Center the individual iframes */
+}
+
+.map-1,
+.map-2,
+.map-3 {
+    align-items: center;
 }
 
 .spacediv {
@@ -642,11 +650,8 @@ main {
         height: 70vh;
     }
 
-    #contact .contact-background {
-        top: 50%; /* Center the background vertically */
-        left: 50%;
-        transform: translate(-50%, -50%); /* Center the background horizontally */
-        width: 100%; /* Adjust the width as needed */
+    .spacediv {
+        height: 10vh;
     }
 }
 
