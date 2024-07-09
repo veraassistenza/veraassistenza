@@ -160,33 +160,11 @@ header > .container {
 }
 
 #home > .container {
+    padding-top: 3rem;
     align-items: start;
     max-width: none;
     margin: 0 auto;
     display: flex;
-    padding: 3rem 7rem 7rem 7rem;
-}
-
-.main-logo {
-    margin-bottom: 20px; /* Adjust this as needed */
-}
-
-/* .smaller-logos {
-    display: flex;
-    justify-content: center;
-    gap: 10px; Adjust the gap between smaller logos as needed 
-} */
-
-.smaller-logos {
-    display: flex;
-    margin-top: 20px;
-    gap: 10px;
-}
-
-.smaller-logos img {
-    width: 10rem;
-    height: auto;
-    align-self: center;
 }
 
 .top-right-icon {
@@ -606,8 +584,8 @@ main {
     }
 
     #home > .container {
-        margin-top: 10rem; /* Increase top margin for logo */
-        padding: 2rem;
+        margin-top: 17rem; /* Increase top margin for logo */
+        padding: 1rem;
         flex-direction: column;
     }
 
@@ -658,10 +636,6 @@ main {
     
     .mobile-divider {
         display: block;
-    }
-    
-    .smaller-logos img {
-        width: 5rem;
     }
 
     #contact {
