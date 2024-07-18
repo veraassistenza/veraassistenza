@@ -1,7 +1,35 @@
-:root {
-    --cultured: #FAF9F6;
-}
 
+
+:after, :before, :root {
+    --primary-lighter: #fecccc;
+    --primary-light: #ff0000;
+    --primary-main: #ff0000;
+    --primary-dark: #aa0000;
+    --primary-darker: #510000;
+    --secondary-lighter: #fff2ce;
+    --secondary-light: #ffcc00;
+    --secondary-main: #ad7f00;
+    --secondary-dark: #464100;
+    --secondary-darker: #1a1700;
+    --fancyGradient-linearSecondaryTo: #ff0000;
+    --fancyGradient-radialPrimaryTo: #00ff47;
+    --fancyGradient-radialAccentFrom: #fff500;
+    --fancyGradient-radialAccentTo: #51d500
+
+    --fancy-x: 0%;
+    --fancy-y: 0%;
+    --fancy-gradient-blend-mode: overlay, color-dodge, overlay, overlay, difference, normal;
+    --fancy-gradient-dark: linear-gradient(120deg,var(--primary-light) 0%,
+                           var(--primary-darker) 100%), 
+                           linear-gradient(120deg,var(--secondary-main) 0%,
+                           var(--secondary-darker) 100%), 
+                           linear-gradient(180deg,var(--secondary-dark) 0%,
+                           var(--fancyGradient-linearSecondaryTo) 100%), 
+                           linear-gradient(60deg,var(--secondary-light) 0%,
+                           var(--primary-dark) 100%), 
+                           radial-gradient(100% 165% at var(--fancy-x) var(--fancy-y),var(--primary-main) 0%,var(--fancyGradient-radialPrimaryTo) 100%), radial-gradient(100% 150% at 0% 0%,var(--fancyGradient-radialAccentFrom) 0%,var(--fancyGradient-radialAccentTo) 100%);
+    --fancy-gradient-light: var(--fancy-gradient-dark);
+}
 /* WebKit (Chrome, Safari, Opera) Scrollbar*/
 ::-webkit-scrollbar {
     width: 8px;
@@ -46,6 +74,18 @@
     }
     100% {
         transform: translateY(0);
+    }
+}
+
+@keyframes zoomBackground {
+    0% {
+        background-size: 100% 100%;
+    }
+    50% {
+        background-size: 150% 150%;
+    }
+    100% {
+        background-size: 100% 100%;
     }
 }
 
@@ -103,14 +143,27 @@ body {
     padding: 0;
     box-sizing: border-box;
     line-height: 1.6;
-    background: linear-gradient(135deg, #d09393 10%, #da1313 90%);
-    background-size: cover;
+    background-color:hsla(0,65%,89%,1);
+    background-image:
+    radial-gradient(at 83% 0%, hsla(0,100%,68%,1) 0px, transparent 50%),
+    radial-gradient(at 17% 0%, hsla(0,76%,70%,1) 0px, transparent 50%),
+    radial-gradient(at 49% 0%, hsla(0,80%,67%,1) 0px, transparent 50%),
+    radial-gradient(at 1% 95%, hsla(0,100%,68%,1) 0px, transparent 50%),
+    radial-gradient(at 60% 64%, hsla(0,50%,75%,1) 0px, transparent 50%),
+    radial-gradient(at 92% 17%, hsla(358,81%,66%,0.34) 0px, transparent 50%),
+    radial-gradient(at 99% 97%, hsla(0,51%,81%,1) 0px, transparent 50%),
+    radial-gradient(at 4% 14%, hsla(0,44%,82%,1) 0px, transparent 50%),
+    radial-gradient(at 100% 0%, hsla(358,93%,63%,0.34) 0px, transparent 50%),
+    radial-gradient(at 80% 100%, hsla(0,100%,86%,1) 0px, transparent 50%),
+    radial-gradient(at 30% 29%, hsla(358,100%,83%,1) 0px, transparent 50%);
     background-attachment: fixed;
-    background-size: 150% 150%;
+    background-size: cover;
     transition: background 0.3s ease-in-out;
     overflow-x: hidden;
     display: flex;
     flex-direction: column;
+    background-size: 100% 100%;
+    animation: zoomBackground 4s infinite linear;
 }
 
 header {
