@@ -1,4 +1,10 @@
-
+@font-face {
+    font-family: 'Lovelo';
+    src:url('/assets/fonts/Lovelo/Lovelo-Black.ttf') format('ttf'), url('/assets/fonts/Lovelo/Lovelo-Black.otf') format('otf'),
+        url('/assets/fonts/Lovelo/Lovelo-Black.woff') format('woff'), url('/assets/fonts/Lovelo/Lovelo-Black.woff2') format('woff2');
+    font-weight: normal;
+    font-style: normal;
+}
 
 :after, :before, :root {
     --primary-lighter: #fecccc;
@@ -137,7 +143,7 @@
 
 /* Default gradient for every page */
 body {
-    font-family: "DM Sans", sans-serif;
+    font-family: 'Figtree', sans-serif;
     height: 100%;
     margin: 0;
     padding: 0;
@@ -163,7 +169,38 @@ body {
     display: flex;
     flex-direction: column;
     background-size: 100% 100%;
-    animation: zoomBackground 4s infinite linear;
+    animation: zoomBackground 3.5s infinite linear;
+}
+
+
+/* Dim background when popup is active */
+body.popup-active::before {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 10000; /* Just below the popup */
+    transition: opacity 0.5s ease-in-out;
+}
+
+body.popup-active::before {
+    opacity: 1;
+}
+
+
+/* Zoom-in animation */
+@keyframes zoomIn {
+    0% {
+        transform: scale(0.7);
+        opacity: 0;
+    }
+    100% {
+        transform: scale(1);
+        opacity: 1;
+    }
 }
 
 header {
@@ -386,10 +423,10 @@ main {
 }
 
  */
-.popup {
-    display: flex;
+ .popup {
+    display: none; /* Hide by default */
     position: fixed;
-    z-index: 10001;
+    z-index: 10001; /* Just above the dimmed background */
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
@@ -402,7 +439,8 @@ main {
     border-radius: 10px;
     color: black;
     padding: 5rem;
-    animation: slideDown 0.5s forwards;
+    animation: slideDown 0.5s forwards; /* Add zoomIn animation */
+    /* animation: zoomIn 0.5s forwards; */
     overflow-y: auto;
 }
 
