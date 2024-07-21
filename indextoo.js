@@ -42,7 +42,7 @@ function revealSpans(){
     for (let i = 0; spans.length; i++) {
         if (spans[i].parentElement.getBoundingClientRect().top < window.innerHeight / 2) {
             let {left, top} = spans[i].getBoundingClientRect();
-            top = top - (window.innerHeight * 0.45); /* Adjust to set where the reveal effect starts on the page */
+            top = top - (window.innerHeight * 0.4); /* Adjust to set where the reveal effect starts on the page */
             let opacityValue = 1 - ((top * 0.01) + (left * 0.001)) < 0.1 ? 0.1 : 1 - ((top * 0.01) + (left * 0.001)).toFixed(3);
             opacityValue = opacityValue > 1 ? 1 : opacityValue.toFixed(3);
             spans[i].style.opacity = opacityValue;
