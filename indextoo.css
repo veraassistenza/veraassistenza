@@ -6,6 +6,20 @@
     font-style: normal;
 }
 
+/* Scrollbar */
+::-webkit-scrollbar {
+    width: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #ddd;
+    border-radius: 4px;
+}
+
 /* Keyframes for animations start */
 @keyframes fadeIn {
     0% {
@@ -33,6 +47,7 @@
         transform: translateY(-100%);
         opacity: 0;
     }
+
     to {
         opacity: 1;
         transform: translateY(0%);
@@ -86,20 +101,23 @@
     --main-color: #eadcdc;
 }
 
+html {
+    scroll-behavior: smooth;
+}
 
 body {
     min-height: 100vh;
-    width: 100vw;
+    width: 100%;
     min-width: 100%;
     background: var(--bg-color);
     color: var(--text-color);
 }
 
 /* Header start */
-/* Note: To be done in another way, but for now it's a fixed header. */
 header {
     width: 100%;
     align-items: center;
+    transition: transform 0.3s ease, opacity 0.3s ease;
 }
 
 .header-container {
@@ -117,6 +135,14 @@ header {
     transition: all 0.5s ease;
     border-top: 2px solid var(--bg-color);
     border-bottom: 2px solid var(--bg-color);
+}
+
+.header--hidden {
+    animation: slideUp 0.5s forwards;
+}
+
+.header--visible {
+    animation: slideDown 0.5s forwards;
 }
 
     /* Logo start */
@@ -226,6 +252,7 @@ header {
                 top: 8rem;
                 left: 0px;
                 height: calc(100vh - 50px); /* Offset for the navbar */
+                z-index: 999;
                 width: 100%;
                 border-radius: 20px;
                 transition: all 0.5 ease;
@@ -305,22 +332,134 @@ main {
     flex-direction: column;
     align-items: flex-end;
     justify-content: center;
-    margin-left: auto;
+    margin: 0 auto;
     height: 100vh;
     width: 80%;
 }
 
 .initial-text p {
-    font-weight: 700;
+    font-weight: 800;
     font-size: 13rem;
     color: var(--main-color);
     text-align: right;
+    font-style: italic;
 }
 
 span { /* Won't use span for anything... for now. */
     opacity: 0.1;
 }
 /* Initial text end */
+
+/* Our services start*/
+.services-container {
+    height: 100vh;
+    display: flex;
+    align-content: center;
+    justify-content: center;
+    margin: 0;
+}
+
+.services-container .service-section {
+    width: 85%;
+    max-width: 100%;
+    background-color: var(--main-color);
+    border-radius: 100px;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+}
+
+.service-section h2 {
+    padding: 2rem;
+    color: var(--bg-color);
+    font-size: 13rem;
+}
+
+.cards {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+    margin-top: 20px;
+    flex-wrap: wrap;
+}
+
+.cards .card {
+    height: 100%;
+    width: 30%;  /* Adjusted width for horizontal layout */
+    border-radius: 20px;
+    border: 1px solid var(--main-red-faded);
+    display: flex;
+    justify-content: flex-start;
+    flex-direction: column;
+    background: white;
+    padding: 0 8%;
+}
+
+.cards .card .content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    justify-items: center;
+    padding: 1rem;
+}
+
+.cards .card .content h3 {
+    text-align: center;
+}
+
+.service-section .card p {
+    width: 80%;
+    font-size: 1rem;
+    color: var(--text-color);
+    text-align: left;
+    line-height: 1.5rem;
+    white-space: 1px;
+    margin-bottom: 40px;
+}
+/* Our services end */
+
+/* Contact us start */
+.contact-container {
+    height: 100vh;
+    display: flex;
+    align-content: center;
+    justify-content: center;
+    margin: 0;
+}
+
+.contact-container .contacts {
+    width: 85%;
+    max-width: 100%;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+}
+
+.contact-container .contacts .map-container {
+    margin-top: 5rem;
+    display: flex;
+    justify-content: center; /* Center the iframes horizontally */
+    gap: 1rem;
+    align-items: center;
+    flex-wrap: wrap; /* Ensure they wrap on smaller screens */
+}
+
+.contact-container .contacts h2 {
+    font-size: 13rem;
+}
+
+.maps {
+    border-radius: 10px;
+    margin: 0 auto; /* Center the individual iframes */
+}
+
+.map-1,
+.map-2,
+.map-3 {
+    align-items: center;
+}
+/* Contact us end */
 
 /* Footer start */
 footer {
@@ -423,6 +562,23 @@ footer,
         }
         /* Main text end */
     /* Main end */
+
+    /* Our services start */
+    .services-container .service-section {
+        border-radius: 40px;
+    }
+
+    .service-section h2 {
+        font-size: 7rem;
+        margin-bottom: 0;
+    }
+    /* Our services end */
+
+    /* Contact us start */
+    .contact-container .contacts h2 {
+        font-size: 7rem;
+    }
+    /* Contact us end */
 }
 
 @media (max-width: 768px) { /* tablets */
@@ -469,6 +625,27 @@ footer,
         font-size: 5rem;
     }
     /* Initial text end */
+
+    /* Our services start */
+    .services-container .service-section {
+        border-radius: 30px;
+    }
+
+    .service-section h2 {
+        font-size: 3rem;
+        margin-bottom: 0;
+    }
+
+    .cards .card {
+        width: 90%;
+    }
+    /* Our services end */
+
+    /* Contact us start */
+    .contact-container .contacts h2 {
+        font-size: 3rem;
+    }
+    /* Contact us end */
 }
 
 @media (max-width: 480px) { /* Smartphones */
@@ -510,11 +687,22 @@ footer,
         /* Main text end */
     /* Main end */
 
-    /* Initial text start */
-    .initial-text p {
-        font-size: 3.5rem;
+    /* Our services start */
+    .services-container .service-section {
+        border-radius: 30px;
     }
-    /* Initial text end */
+
+    .service-section h2 {
+        font-size: 3rem;
+        margin-bottom: 0;
+    }
+    /* Our services end */
+
+    /* Contact us start */
+    .contact-container .contacts h2 {
+        font-size: 3rem;
+    }
+    /* Contact us end */
 }
 
 @media (max-width: 376px) { /* Smaller smartphones */
