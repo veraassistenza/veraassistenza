@@ -298,7 +298,7 @@ main {
     text-align: left;
     margin: 0;
     padding: 0;
-    font-size: 13rem;
+    font-size: 10rem;
     color: var(--bg-color);
 }
 
@@ -339,7 +339,7 @@ main {
 
 .initial-text p {
     font-weight: 800;
-    font-size: 13rem;
+    font-size: 10rem;
     color: var(--main-color);
     text-align: right;
     font-style: italic;
@@ -372,7 +372,7 @@ span { /* Won't use span for anything... for now. */
 .service-section h2 {
     padding: 2rem;
     color: var(--bg-color);
-    font-size: 13rem;
+    font-size: 10rem;
 }
 
 .cards {
@@ -382,10 +382,11 @@ span { /* Won't use span for anything... for now. */
     gap: 1rem;
     margin-top: 20px;
     flex-wrap: wrap;
+    max-width: 100%;
+    max-height: 100%;
 }
 
 .cards .card {
-    height: 100%;
     width: 30%;  /* Adjusted width for horizontal layout */
     border-radius: 20px;
     border: 1px solid var(--main-red-faded);
@@ -406,6 +407,13 @@ span { /* Won't use span for anything... for now. */
 
 .cards .card .content h3 {
     text-align: center;
+}
+
+.cards .card img {
+    max-width: 80%;
+    height: auto;
+    display: block;
+    margin: 0 auto;
 }
 
 .service-section .card p {
@@ -446,7 +454,7 @@ span { /* Won't use span for anything... for now. */
 }
 
 .contact-container .contacts h2 {
-    font-size: 13rem;
+    font-size: 10rem;
 }
 
 .maps {
@@ -572,6 +580,14 @@ footer,
         font-size: 7rem;
         margin-bottom: 0;
     }
+
+    .services-container .service-section {
+        width: 95%;
+    }
+
+    .cards .card {
+        width: 80%;
+    }
     /* Our services end */
 
     /* Contact us start */
@@ -637,7 +653,7 @@ footer,
     }
 
     .cards .card {
-        width: 90%;
+        width: 70%;
     }
     /* Our services end */
 
@@ -695,6 +711,10 @@ footer,
     .service-section h2 {
         font-size: 3rem;
         margin-bottom: 0;
+    }
+
+    .cards .card {
+        width: 60%;
     }
     /* Our services end */
 
