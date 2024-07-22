@@ -54,3 +54,18 @@ window.addEventListener('scroll', () => {
     revealSpans();
 })
 /* Initial text end */
+
+/* Services text start*/
+let acc_boxEl = document.querySelectorAll(".acc-box");
+let symbol = document.querySelector(".symbol");
+
+acc_boxEl.forEach((item, index) => {
+    item.addEventListener("click", () => {
+        acc_boxEl.forEach(eachItem => {
+            eachItem.classList.remove("active");
+        })
+        item.classList.add("active");
+    })
+})
+
+/* Services text end */
