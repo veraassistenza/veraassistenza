@@ -429,7 +429,7 @@ span { /* Won't use span for anything... for now. */
 
 /* Services text start */
 .services-text-container {
-    min-width: 100vh;
+    min-width: 100vw;
     width: 100%;
     color: var(--main-color);
     display: flex;
@@ -488,6 +488,7 @@ span { /* Won't use span for anything... for now. */
 .acc-box.active {
     background: var(--main-color);
     color: var(--main-red-faded);
+    transition: all 0.4s ease-in-out;
 }
 
 .acc-box.active .heading {
