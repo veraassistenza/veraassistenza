@@ -449,7 +449,7 @@ span { /* Won't use span for anything... for now. */
 
 .acc-box { 
     width: 100%;
-    background-color: var(--bg-color);
+    background-color: var(--main-red-faded);
     border: 1px solid var(--main-color);
     padding: 20px;
     margin: 0.2px 0;
@@ -488,8 +488,6 @@ span { /* Won't use span for anything... for now. */
 }
 
 .acc-box.active {
-    background: var(--main-color);
-    color: var(--main-red-faded);
     transition: all 0.4s ease-in-out;
 }
 
@@ -538,6 +536,7 @@ span { /* Won't use span for anything... for now. */
     background-color: #eadcdc9c; /* Map container transparent white color for text legibility on maps */
     backdrop-filter: blur(0.5px);
     border-radius: 20px;
+    margin-bottom: 2rem;
 }
 
 .contact-container .contacts h2 {
