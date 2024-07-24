@@ -381,7 +381,6 @@ span { /* Won't use span for anything... for now. */
     justify-content: center;
     align-items: center;
     gap: 1rem;
-    margin-top: 20px;
     flex-wrap: wrap;
     max-width: 100%;
     max-height: 100%;
@@ -396,7 +395,7 @@ span { /* Won't use span for anything... for now. */
     justify-content: flex-start;
     flex-direction: column;
     background: #f3e8e8;
-    padding: 0 8%;
+    padding: 0 3%;
 }
 
 .cards .card .content {
@@ -410,10 +409,11 @@ span { /* Won't use span for anything... for now. */
 .cards .card .content h3 {
     text-align: center;
     color: var(--main-red-faded);
+    font-size: 2rem;
 }
 
 .cards .card img {
-    max-width: 80%;
+    max-width: 50%;
     height: auto;
     display: block;
     margin: 0 auto;
@@ -758,6 +758,10 @@ footer,
     .cards .card {
         width: 70%;
     }
+
+    .cards .card .content h3 {
+        font-size: 1.2rem;
+    }
     /* Our services end */
 
     /* Contact us start */
@@ -824,6 +828,10 @@ footer,
 
     .cards .card {
         width: 60%;
+    }
+
+    .cards .card .content h3 {
+        font-size: 0.8rem;
     }
     /* Our services end */
 
