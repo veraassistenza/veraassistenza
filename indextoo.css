@@ -340,7 +340,7 @@ main {
 
 .initial-text p {
     font-weight: 800;
-    font-size: 10rem;
+    font-size: 7rem;
     color: var(--main-color);
     text-align: right;
     font-style: italic;
@@ -353,7 +353,7 @@ span { /* Won't use span for anything... for now. */
 
 /* Our services start*/
 .services-container {
-    height: 100vh;
+    /* height: 100vh; */
     display: flex;
     align-content: center;
     justify-content: center;
@@ -373,7 +373,7 @@ span { /* Won't use span for anything... for now. */
 .service-section h2 {
     padding: 2rem;
     color: var(--bg-color);
-    font-size: 10rem;
+    font-size: 7rem;
 }
 
 .cards {
@@ -385,6 +385,7 @@ span { /* Won't use span for anything... for now. */
     flex-wrap: wrap;
     max-width: 100%;
     max-height: 100%;
+    padding: 5rem;
 }
 
 .cards .card {
@@ -394,7 +395,7 @@ span { /* Won't use span for anything... for now. */
     display: flex;
     justify-content: flex-start;
     flex-direction: column;
-    background: white;
+    background: #f3e8e8;
     padding: 0 8%;
 }
 
@@ -438,6 +439,10 @@ span { /* Won't use span for anything... for now. */
     align-items: center;
     flex-direction: column;
     padding: 5%;
+}
+
+.services-text-container h2 {
+    font-size: 7rem;
 }
 
 .acc-container {
@@ -540,7 +545,7 @@ span { /* Won't use span for anything... for now. */
 }
 
 .contact-container .contacts h2 {
-    font-size: 10rem;
+    font-size: 7rem;
     padding: 1.2rem;
 }
 
@@ -610,7 +615,7 @@ footer,
     /* Main start */
         /* Main text start */
         .main-text p {
-            font-size: 10rem;
+            font-size: 8rem;
         }
         
         .main-text .small-text p {
@@ -673,6 +678,10 @@ footer,
         width: 95%;
     }
 
+    .cards {
+        padding: 2rem;
+    }
+
     .cards .card {
         width: 80%;
     }
@@ -683,6 +692,12 @@ footer,
         font-size: 7rem;
     }
     /* Contact us end */
+
+    /* Services text start */
+    .services-text-container h2 {
+        font-size: 7rem;
+    }
+    /* Services text end */
 }
 
 @media (max-width: 768px) { /* tablets */
@@ -750,6 +765,12 @@ footer,
         font-size: 3rem;
     }
     /* Contact us end */
+
+    /* Services text start */
+    .services-text-container h2 {
+        font-size: 3rem;
+    }
+    /* Services text end */
 }
 
 @media (max-width: 480px) { /* Smartphones */
@@ -818,6 +839,12 @@ footer,
         border-top-right-radius: 50px;
     }
     /* Contact us end */
+
+    /* Services text start */
+    .services-text-container h2 {
+        font-size: 3rem;
+    }
+    /* Services text end */
 }
 
 @media (max-width: 376px) { /* Smaller smartphones */
@@ -869,6 +896,12 @@ footer,
         font-size: 3rem;
     }
     /* Initial text end */
+
+    /* Services text start */
+    .services-text-container h2 {
+        font-size: 3rem;
+    }
+    /* Services text end */
     
 }
 /* Tablet and mobile integration end */
