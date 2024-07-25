@@ -490,11 +490,14 @@ span { /* Won't use span for anything... for now. */
     font-size: 14px;
     padding-top: 10px;
     list-style-type: disc;
+    margin-left: 20px; /* Adding margin to indent the bullets */
 }
 
 .acc-text ul li {
     font-size: 14px;
+    list-style-type: disc;
 }
+
 
 .acc-box.active {
     transition: all 0.4s ease-in-out;
