@@ -368,12 +368,18 @@ span { /* Won't use span for anything... for now. */
     position: relative;
     display: flex;
     flex-direction: column;
+    align-items: center;
 }
 
 .service-section h2 {
     padding: 2rem;
     color: var(--bg-color);
     font-size: 7rem;
+}
+
+.service-section p {
+    padding: 0 2rem;
+    font-size: 1rem;
 }
 
 .cards {
@@ -498,6 +504,10 @@ span { /* Won't use span for anything... for now. */
     list-style-type: disc;
 }
 
+.acc-text ul .no-disc {
+    list-style-type: none;
+    text-decoration: underline;
+}
 
 .acc-box.active {
     transition: all 0.4s ease-in-out;
@@ -515,7 +525,6 @@ span { /* Won't use span for anything... for now. */
 
 /* Contact us start */
 .contact-container {
-    min-height: 100vh;
     display: flex;
     align-content: center;
     justify-content: center;
@@ -531,6 +540,7 @@ span { /* Won't use span for anything... for now. */
     position: relative;
     display: flex;
     flex-direction: column;
+    align-items: center;
     color: var(--bg-color);
 }
 
@@ -542,6 +552,7 @@ span { /* Won't use span for anything... for now. */
     align-items: center;
     flex-wrap: wrap; /* Ensure they wrap on smaller screens */
     border-radius: 20px;
+    margin-bottom: 3rem;
 }
 
 .contact-container .contacts .map-container div {
@@ -580,7 +591,7 @@ footer {
 }
 
 footer p {
-    color: var(--text-color);
+    color: rgba(201, 145, 145, 0.694);
     font-size: 0.6rem;
 }
 
