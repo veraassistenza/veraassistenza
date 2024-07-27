@@ -1009,14 +1009,8 @@ footer p {
     transition: all 1s;
 }
 
-.hidden-box {
-    opacity: 0;
-    visibility: hidden;
-}
-
 .show {
-    opacity: 1 !important;
-    visibility: visible !important;
+    opacity: 1;
 }
 /* Extras: scroll animations end */
 
