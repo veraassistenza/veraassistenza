@@ -654,6 +654,9 @@ footer p {
         /* Main text start */
         .main-text p {
             font-size: 8rem;
+            overflow: hidden;
+            white-space: nowrap;
+            text-overflow: ellipsis;
         }
         
         .main-text .small-text p {
