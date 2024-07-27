@@ -111,7 +111,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 clearInterval(interval);
             }
 
-            iteration += 1 / 2;
+            iteration += 1/4;
         }, 30);
     });
 });
