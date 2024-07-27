@@ -309,8 +309,8 @@ main {
     color: var(--text-color);
 }
 
-/* Main text animation */
-.main-text p,
+/* Main text animation */ /* currently testing other animations */
+/* .main-text p,
 .main-text .small-text p {
     animation: slideDownBounce 1.2s linear;
     animation-fill-mode: both;
@@ -324,7 +324,7 @@ main {
 .main-text .small-text :nth-child(1) {
     animation: slideDownBounce 0.8s linear;
     animation-delay: 0.2s;
-}
+} */
 /* Main end */
 
 /* Initial text start */
@@ -519,10 +519,6 @@ span { /* Won't use span for anything... for now. */
     transition: all 0.4s ease-in-out;
 }
 
-.acc-box.active .heading {
-    font-weight: 500;
-}
-
 .acc-box.active .acc-text {
     max-height: 100vh;
     transition: all 0.4s ease-in-out;
@@ -592,8 +588,8 @@ span { /* Won't use span for anything... for now. */
 }
 
 .social-footer {
-    border-top-left-radius: 10px;
-    border-top-right-radius: 10px;
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
     background: var(--bg-color);
     padding: 1rem;
     display: flex;
@@ -736,7 +732,7 @@ footer p {
 
     /* Services text start */
     .services-text-container h2 {
-        font-size: 7rem;
+        font-size: 5rem;
     }
     /* Services text end */
 }
@@ -813,7 +809,7 @@ footer p {
 
     /* Services text start */
     .services-text-container h2 {
-        font-size: 3rem;
+        font-size: 5rem;
     }
     /* Services text end */
 }
@@ -953,7 +949,11 @@ footer p {
 
     /* Services text start */
     .services-text-container h2 {
-        font-size: 3rem;
+        font-size: 2rem;
+    }
+
+    .services-text-container p {
+        font-size: 0.8rem;
     }
     /* Services text end */
     
@@ -971,12 +971,10 @@ footer p {
 .hidden {
     opacity: 0;
     transition: all 1s;
-    filter: blur(1px);
 }
 
 .show {
     opacity: 1;
-    filter: blur(0);
 }
 /* Extras: scroll animations end */
 
