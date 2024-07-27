@@ -84,8 +84,8 @@ const hiddenElements = document.querySelectorAll('.hidden');
 hiddenElements.forEach((el) => observer.observe(el))
 /* Extras: scroll animations end */
 
-/* Random letters animation */
-/* Random letters animation */
+/* Random letters animation start */
+
 const letters = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
 
 document.addEventListener('DOMContentLoaded', () => {
@@ -111,7 +111,8 @@ document.addEventListener('DOMContentLoaded', () => {
                 clearInterval(interval);
             }
 
-            iteration += 1 / 3;
+            iteration += 1 / 2;
         }, 30);
     });
 });
+/* Random letters animation end */
