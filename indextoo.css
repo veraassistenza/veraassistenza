@@ -452,6 +452,10 @@ span { /* Won't use span for anything... for now. */
     font-size: 5rem;
 }
 
+.services-text-container .requirements {
+    text-align: center;
+}
+
 .acc-container {
     width: 100%;
     max-width: 600px;
