@@ -9,6 +9,7 @@
 /* Scrollbar */
 ::-webkit-scrollbar {
     width: 8px;
+    display: none; /* Trying to remove  */
 }
 
 ::-webkit-scrollbar-track {
@@ -958,3 +959,24 @@ footer p {
     
 }
 /* Tablet and mobile integration end */
+
+/* Extras: for those who don't like to see stupid animations all over and over again*/
+@media(prefers-reduced-motion) {
+    .hidden {
+        transition: none;
+    }
+}
+
+/* Extras: scroll animations start*/
+.hidden {
+    opacity: 0;
+    transition: all 1s;
+    filter: blur(1px);
+}
+
+.show {
+    opacity: 1;
+    filter: blur(0);
+}
+/* Extras: scroll animations end */
+

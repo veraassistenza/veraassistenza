@@ -66,4 +66,20 @@ acc_boxEl.forEach((item, index) => {
     })
 })
 
+
 /* Services text end */
+
+/* Extras: scroll animations start*/
+const observer = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+            entry.target.classList.add('show');
+        } else {
+            entry.target.classList.remove('show');
+        }
+    })
+})
+
+const hiddenElements = document.querySelectorAll('.hidden');
+hiddenElements.forEach((el) => observer.observe(el))
+/* Extras: scroll animations end */
