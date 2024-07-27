@@ -305,6 +305,8 @@ main {
     overflow: hidden;
     white-space: nowrap;
     text-overflow: ellipsis;
+    max-width: 100%;
+    display: inline-block;
 }
 
 .main-text .small-text p {
