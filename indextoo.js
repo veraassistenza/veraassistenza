@@ -116,3 +116,32 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 });
 /* Random letters animation end */
+
+/* Slide left right animation start */
+document.addEventListener('DOMContentLoaded', () => {
+    const accBoxElements = document.querySelectorAll('.acc-box');
+
+    const observerOptions = {
+        root: null, // Use the viewport as the root
+        rootMargin: '0px', // No margin around the root
+        threshold: 0.5 // 50% of the element must be visible
+    };
+
+    const observer = new IntersectionObserver((entries, observer) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('show', entry.target.dataset.slideDirection);
+            } else {
+                entry.target.classList.remove('show', entry.target.dataset.slideDirection);
+            }
+        });
+    }, observerOptions);
+
+    accBoxElements.forEach((accBox, index) => {
+        accBox.classList.add('hidden-box');
+        accBox.dataset.slideDirection = index % 2 === 0 ? 'slide-in-left' : 'slide-in-right';
+        observer.observe(accBox);
+    });
+});
+
+/* Slide left rigth animation end */

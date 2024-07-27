@@ -83,6 +83,36 @@
         transform: translateY(0);
     }
 }
+
+@keyframes slideInFromLeft {
+    from {
+        opacity: 0;
+        transform: translateX(-100%);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes slideInFromRight {
+    from {
+        opacity: 0;
+        transform: translateX(100%);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+.slide-in-left {
+    animation: slideInFromLeft 1s forwards;
+}
+
+.slide-in-right {
+    animation: slideInFromRight 1s forwards;
+}
 /* Keyframes for animations end */
 
 
@@ -979,8 +1009,14 @@ footer p {
     transition: all 1s;
 }
 
+.hidden-box {
+    opacity: 0;
+    visibility: hidden;
+}
+
 .show {
-    opacity: 1;
+    opacity: 1 !important;
+    visibility: visible !important;
 }
 /* Extras: scroll animations end */
 
