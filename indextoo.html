@@ -3,11 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <!-- Favicon -->
-    <link rel="icon" href="/assets/VERALogo.png" type="image/x-icon">
-
-
+    <title>VERA Assistenza</title>
+    <link rel="icon" href="/assets/VERALogo.png" type="image/x-icon"> <!-- GitHub version -->
+    <!-- <link rel="icon" href="./images/index/VERALogo.ico" type="image/x-icon"> --> <!-- Official version -->
     <link rel="stylesheet" href="indextoo.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -15,7 +13,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Figtree:ital,wght@0,300..900;1,300..900&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
 
-    <!-- Open graph tags start -->
+    <!-- open graph tags -->
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website" />
     <meta property="og:url" content="https://veraassistenza.it/" />
@@ -23,543 +21,343 @@
     <meta property="og:description" content="" />
     <meta property="og:image" content="https://veraassistenza.it/assets/png/vera_logo_big.png" />
 
-    <!-- Open Graph / Twitter (X) -->
+    <!-- Twitter -->
     <meta property="twitter:card" content="summary_large_image" />
     <meta property="twitter:url" content="https://veraassistenza.it/" />
     <meta property="twitter:title" content="VERA Assistenza" />
     <meta property="twitter:description" content="" />
     <meta property="twitter:image" content="https://veraassistenza.it/assets/png/vera_logo_big.png" />
-    <!-- Open graph tags end -->
 
-    <title>VERA Assistenza</title>
 </head>
 <body>
-    <!-- Header start -->
-    <header>
-        <div class="header-container trigger">
-            <a href="#home" class="logo"><img src="/assets/png/vera_logo_big_only.png" alt="VERA Logo"></a>
-            <ul class="navbar"> <!-- Navbar -->
+    <!-- top right icon -->
+    <img src="assets/png/top_right_icon.png" alt="stylish icon" class="top-right-icon">
+    <img src="assets/png/right_icon.png" alt="icon blob one" class="top-right-icon blobs" id="blob-one">
+    <img src="assets/png/bottom_right_icon.png" alt="icon blob two" class="bottom-right-icon blobs" id="blob-two">
+    <div id="loading-screen">
+        <div class="spinner"></div>
+    </div>
+    <div id="content">
+
+        <!-- Small screen buton -->
+        <button class="menu-button" id="menuButton">☰</button>
+        <!-- Small screen popup -->
+        <div class="popup-menu" id="popupMenu">
+            <button class="menu-button hidden" id="closeButton">✖</button>
+            <ul>
                 <li><a href="#home">Home</a></li>
-                <li><a href="#aboutUs">About Us</a></li>
+                <li><a href="#about">About Us</a></li>
                 <li><a href="#services">Our Services</a></li>
                 <li><a href="#contact">Contact Us</a></li>
             </ul>
-            <!-- Note: Maybe add something else later on. Want the navbar to be in the middle instead of moving it to the right. -->
-            <!-- Menu icon start -->
-            <div class="hamburger-icon" onclick="toggleMobileMenu(this)">
-                <div class="bar1 bar"></div>
-                <div class="bar2 bar"></div>
-                <div class="bar3 bar"></div>
-                <div class="mobile-menu-container">
-                    <ul class="mobile-menu">
+        </div>
+        <!-- header -->
+        <header>
+            <div class="container">
+                <!-- <h1><a href="index.html">VERA Assistenza</a></h1> -->
+                <nav>
+                    <ul>
                         <li><a href="#home">Home</a></li>
-                        <li><a href="#aboutUs">About Us</a></li>
+                        <li><a href="#about">About Us</a></li>
                         <li><a href="#services">Our Services</a></li>
                         <li><a href="#contact">Contact Us</a></li>
                     </ul>
-                </div>
+                </nav>
             </div>
-            <!-- Menu icon end -->
-        </div>
-    </header>
-    <!-- Header end -->
-
-    <!-- Main start -->
-    <main>
-        <div class="main-container trigger" id="home">
-            <div class="main-text">
-                <p data-value="VERA">VERA</p>
-                <p data-value="Assistenza">Assistenza</p>
-                <div class="small-text">
-                    <p>Patronato | CAF | Immigrazione</p>
+        </header>
+        
+        <main>
+            <!-- home -->
+            <section id="home">
+                <div class="container">
+                    <div class="left"> <!-- Vera Assistenza logo -->
+                            <img src="assets/png/vera_logo_big.png" alt="big VERA logo" class="fit-image">
+                    </div>
+                    <div class="right"> <!-- Flags -->
+                    </div>
                 </div>
-            </div>
-        </div>
-    </main>
-    <!-- Main end -->
-
-    <!-- Initial Text start -->
-    <div class="initial-text trigger" id="aboutUs">
-        <p>REAL SERVICE</p>
-        <p>SINCE 2010</p>
-    </div>
-    <!-- Initial Text end -->
-
-    <!-- Services Card start -->
-    <div class="services-container trigger" id="services" class="hidden">
-        <div class="service-section">
-            <h2 id="ourservicesh2" class="hidden">Our Services</h2>
-            <p class="hidden">Click on one of the categories to see the list of services we offer!</p>
-            <div class="cards hidden">
-                <div class="card">
-                    <a href="#patronato">
-                        <div class="content">
-                            <img src="/assets/svg/6.svg" alt="Immigrazione icon">
-                            <h3>PATRONATO</h3>
+            </section>
+            <!-- services -->
+            <section id="services">
+                <div class="container">
+                    <h2 id="ourservicesh2">OUR SERVICES</h2>
+                    <h2><i>CHOOSE A CATEGORY</i></h2>
+                    <div class="grid">
+                        <div class="card">
+                            <a href="#" id="openPopupImm" class="trigger">
+                                <img src="assets/png/immigr_icon.png" alt="icona immigrazione" class="logo-services">
+                                <p>IMMIGRAZIONE</p>
+                            </a>
                         </div>
-                    </a>
-                </div>
-                <div class="card">
-                    <a href="#caf">
-                        <div class="content">
-                            <img src="/assets/svg/5.svg" alt="Immigrazione icon">
-                            <h3>CAF</h3>
+                        <div class="card">
+                            <a href="#" id="openPopupCaf" class="trigger">
+                                <img src="assets/png/caf_icon.png" alt="icona caf" class="logo-services">
+                                <p>CAF</p>
+                            </a>
                         </div>
-                    </a>
-                </div>
-                <div class="card">
-                    <a href="#immigrazione">
-                        <div class="content">
-                            <img src="/assets/svg/4.svg" alt="Immigrazione icon">
-                            <h3>IMMIGRAZIONE</h3>
+                        <div class="card">
+                            <a href="#" id="openPopupPatronato" class="trigger">
+                                <img src="assets/png/patron_icon.png" alt="icona patronato" class="logo-services">
+                                <p>PATRONATO</p>
+                            </a>
                         </div>
-                    </a>
+                    </div>
                 </div>
+            </section>
+            <!-- popups -->
+            <section id="immigrazione">
+                <div id="popupImm" class="popup" style="display: none;">
+                    <div class="popup-content">
+                        <span class="close-btn" id="closePopupImm">&times;</span>
+                        <h2>IMMIGRAZIONE</h2>
+                        <div class="container-services">
+                            <div class="popup-content-imm">
+                                <ul class="services" id="immigrservices">
+                                    <li onclick="showRequirements(this, '',
+                                                                'Rinnovo/Rilascio del Permesso di Soggiorno',
+                                                                [{text: 'Passport'},
+                                                                {text: 'Permesso di soggiorno'},
+                                                                {text: 'Carta d\'identità'},
+                                                                {text: 'Codice fiscale'},
+                                                                {text: 'Contratto di lavoro(UNILAV)/Denuncia rapporto di lavoro'},
+                                                                {text: 'Ultime 3 buste paga o bollettini INPS'},
+                                                                {text: 'CUD'},
+                                                                {text: 'Documenti personali dei figli (se ci sono figli meno di 14 anni)'}])">Rinnovo/Rilascio del Permesso di Soggiorno</li>
+                                    <li onclick="showRequirements(this, '',
+                                                                'Rilascio/Aggiornamento del Carta Soggiorno',
+                                                                [{text: 'Rilascio:',
+                                                                 sublist: ['Permesso di soggiorno', 'Carta d\'identità', 'Codice fiscale',
+                                                                 'Passaporto', 'Contratto di lavoro (Denuncia rapporto di lavoro/Modello UNILAV)', 'Bolettini INPS/Busta paga',
+                                                                 'CUD', 'Allogiativa(se c\'è carico)', 'Test lingua italiana']},
+                                                                 {text: 'Aggiornamento:',
+                                                                 sublist: ['Permesso di soggiorno', 'Carta d\'identità', 'Codice fiscale', 'Passaporto']}])">Rilascio/Aggiornamento del Carta Soggiorno</li>
+                                    <!-- <li onclick="showRequirements(this, 'Aggiornamento del Carta Soggiorno', ['Permesso di soggiorno', 'Carta d\'identità', 'Codice fiscale', 'Passaporto'])">Rilascio/Aggiornamento del Carta Soggiorno</li> -->
+                                    <li onclick="showRequirements(this, '',
+                                                                'Test Italiano (Appuntamento)',
+                                                                [{text: 'Carta d\'identità/Passaporto'},
+                                                                {text: 'Codice fiscale'},
+                                                                {text: 'Carta soggiorno/Permesso di soggiorno'},
+                                                                {text: 'SPID'}])">Test Italiano</li>
+                                    <li onclick="showRequirements(this, '', 'Ricongiungimento Familiare (Petition)', [{text: 'Richiedente:',
+                                                                sublist: ['Carta d\'identità', 'Codice fiscale', 'Permesso di soggiorno', 'Passaporto', 'CUD/730/UNICO/Bollettini INPS', 'Busta paga', 'Contratto di casa', 'Idoneità alloggiativa', 'S2 e carta d\'identità del proprietario', 'S3 e carta d\identità del datore di lavoro', 'Contratto di lavoro', 'Marca da bollo (€16)', 'Certificato di stato di famiglia']},
+                                                                {text: 'Persona da ricongiungere:', sublist: ['Passaporto (Filippine)']}])">Ricongiungimento Familiare (Petition)</li>
+                                    <li onclick="showRequirements(this, '', 'Cittadinanza', [
+                                    {text: '', sublist: ['Carta d\'identità', 'Codice fiscale', 'Permesso di soggiorno/Carta soggiorno', 'Passaporto', 'Ultimi 3 CUD/730/Modello unico', 'Certificato di residenza storico', 'Bollettino postale (€250)', 'Marca da bollo (€16)', 'SPID']},
+                                    {text: 'Da apostillare: DFA', sublist: ['NBI', 'Birth certificate', 'Marriage contract (if married)']}])">Cittadinanza</li>
+                                    <li onclick="showRequirements(this, '', 'Accompagnamento', [{text: 'Coming soon'},
+                                                                /* {text: 'Carta d\'identità'},
+                                                                {text: 'Codice fiscale'},
+                                                                {text: 'Permesso di soggiorno'},
+                                                                {text: 'Passaporto'},
+                                                                {text: 'Contratto di lavoro'},
+                                                                {text: 'Ultime 3 buste paghe'},
+                                                                {text: 'Documentazione del figlio (se minorenne)'} */])">Accompagnamento</li>
+                                </ul>
+                                <hr class="mobile-divider">
+                            </div>
+                            <div class="requirements" id="requirements">
+                                <h2>Awaiting your choice from the list.</h2>
+                                <p>Please select one of the services to see the requirements.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        
+            <section id="caf">
+                <div id="popupCaf" class="popup" style="display: none;">
+                    <div class="popup-content">
+                        <span class="close-btn" id="closePopupCaf">&times;</span>
+                        <h1>CAF</h1>
+                        <div class="container-services">
+                            <div class="popup-content-imm">
+                                <ul class="services" id="cafservices">
+                                    <li onclick="showRequirements(this, 'Caf',
+                                                'ISEE 2024',
+                                                [{text: 'Carta d\'identità e codice fiscale (persone nello stato di famiglia)'},
+                                                {text: 'CUD 2023 / Redditi 2022'},
+                                                {text: 'Saldo finale e giacenza media 2022 (estratto conto della banca)'},
+                                                {text: 'Contratto di casa (con registrazione)'},
+                                                {text: 'Se in mutuo, visura catastale + capitale residuo'},
+                                                {text: 'Targa macchina / motorino'},
+                                                {text: 'Certificato di invalidità (se c\'è)'}])">ISEE 2024</li>
+                                    <li onclick="showRequirements(this, 'Caf',
+                                                'Modello Unico/730',
+                                                [{text: 'Carta d\'identità'},
+                                                {text: 'Codice fiscale'},
+                                                {text: 'Codice fiscale (famiglia a carico)'},
+                                                {text: 'CUD (present)'},
+                                                {text: 'Contratto di casa (con registrazione)'},
+                                                {text: 'Se in mutuo, contratto di compravendita/mutuo e interessi passivi'},
+                                                {text: 'Premi per assicurazione'},
+                                                {text: 'Spese mediche'},
+                                                {text: 'Spese scolastiche'},
+                                                {text: 'Spese sportive (figli)'},
+                                                {text: 'Spese abbonamento ATM'}
+                                                ])">Modello Unico/730</li>
+                                    <li onclick="showRequirements(this, 'Caf',
+                                                'Carta Acquisti (minore di 3 anni/65 anni)',
+                                                [{text: 'Carta d\'identità'},
+                                                {text: 'Codice fiscale'},
+                                                {text: 'Permesso di soggiorno/Carta soggiorno (genitore/richiedente)'}])">Carta Acquisti</li>
+                                    <li onclick="showRequirements(this, 'Caf',
+                                                'Contratti di Affitto',
+                                                [{text: 'Coming soon'}/* ,
+                                                {text: 'Carta d\'identità'},
+                                                {text: 'Codice fiscale'},
+                                                {text: 'Contratto di affitto'},
+                                                {text: 'Certificato di registrazione'} */])">Contratti di Affitto</li>
+                                    <li onclick="showRequirements(this, 'Caf',
+                                                'Successioni',
+                                                [{text: 'Coming soon'}/* ,
+                                                {text: 'Carta d\'identità'},
+                                                {text: 'Codice fiscale'},
+                                                {text: 'Certificato di morte'},
+                                                {text: 'Certificato di proprietà'},
+                                                {text: 'Dichiarazione di successione'} */])">Successioni</li>
+                                    <li onclick="showRequirements(this, 'Caf',
+                                                'Calcolo TFR',
+                                                [{text: 'Coming soon'}/* ,
+                                                {text: 'Carta d\'identità'},
+                                                {text: 'Codice fiscale'},
+                                                {text: 'Contratto di lavoro'},
+                                                {text: 'Ultima busta paga'},
+                                                {text: 'Documento di cessazione'} */])">Calcolo TFR</li>
+                                    <li onclick="showRequirements(this, 'Caf',
+                                                'Apertura e Chiusura Partita IVA',
+                                                [{text: 'Carta d\'identità'},
+                                                {text: 'Codice fiscale'},
+                                                {text: 'Modulo di richiesta'},
+                                                {text: 'Documento di registrazione'}])">Apertura e Chiusura Partita IVA</li>
+                                    <li onclick="showRequirements(this, 'Caf',
+                                                'Gestione Contabilità',
+                                                [{text: 'Coming soon'}/* ,
+                                                {text: 'Carta d\'identità'},
+                                                {text: 'Codice fiscale'},
+                                                {text: 'Documentazione fiscale'},
+                                                {text: 'Registri contabili'},
+                                                {text: 'Fatture e ricevute'} */])">Gestione Contabilità</li>
+                                </ul>
+                                <hr class="mobile-divider">
+                            </div>
+                            <div class="requirements" id="requirementsCaf">
+                                <h2>Awaiting your choice from the list.</h2>
+                                <p>Please select one of the services to see the requirements.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        
+            <section id="patronato">
+                <div id="popupPatronato" class="popup" style="display: none;">
+                    <div class="popup-content">
+                        <span class="close-btn" id="closePopupPatronato">&times;</span>
+                        <h1>PATRONATO</h1>
+                        <div class="container-services">
+                            <div class="popup-content-imm">
+                                <ul class="services" id="patronatoservices">
+                                    <li onclick="showRequirements(this, 'Patronato',
+                                                        'Pensioni e Contributi',
+                                                        [{text: 'Coming soon'}])">Pensioni e Contributi</li>
+                                    <li onclick="showRequirements(this, 'Patronato',
+                                                                    'Disoccupazione',
+                                                                    [{text: 'Carta d\'identità'},
+                                                                    {text: 'Codice fiscale'},
+                                                                    {text: 'Permesso di soggiorno/Carta soggiorno'},
+                                                                    {text: 'Contratto di lavoro'},
+                                                                    {text: 'Ultimo bollettino/busta paga'},
+                                                                    {text: 'IBAN'}])">Disoccupazione</li>
+                                    <li onclick="showRequirements(this, 'Patronato',
+                                                                    'Maternità',
+                                                                    [{text: 'Carta d\'identità'},
+                                                                    {text: 'Codice fiscale'},
+                                                                    {text: 'Carta soggiorno'},
+                                                                    {text: 'Certificato di gravidanza'},
+                                                                    {text: 'IBAN (richiedente)'},
+                                                                    {text: 'ISEE (present)'}])">Maternità</li>
+                                    <li onclick="showRequirements(this, 'Patronato',
+                                                                    'Invalidità e Disabilità',
+                                                                    [{text: 'Carta d\'identità'},
+                                                                    {text: 'Codice fiscale'},
+                                                                    {text: 'Permesso di soggiorno/Carta soggiorno'},
+                                                                    {text: 'Certificato medico'},
+                                                                    {text: 'IBAN (richiedente)'}])">Invalidità e Disabilità</li>
+                                    <li onclick="showRequirements(this, 'Patronato',
+                                                                    'Gestione Colf e Badante',
+                                                                    [{text: 'Coming soon'}])">Gestione Colf e Badante</li>
+                                    <li onclick="showRequirements(this, 'Patronato',
+                                                                    'CUD',
+                                                                    [{text: 'Carta d\'identità'},
+                                                                    {text: 'Codice fiscale'},
+                                                                    {text: 'Permesso di soggiorno/Carta soggiorno'},
+                                                                    {text: 'Documentazione fiscale'}])">CUD</li>
+                                    <li onclick="showRequirements(this, 'Patronato',
+                                                                    'Buste Paga',
+                                                                    [{text: 'Carta d\'identità'},
+                                                                    {text: 'Codice fiscale'},
+                                                                    {text: 'Permesso di soggiorno/Carta soggiorno'},
+                                                                    {text: 'Contratto di lavoro'}])">Buste Paga</li>
+                                    <li onclick="showRequirements(this, 'Patronato',
+                                                                    'ACCAS/Pensione Sociale',
+                                                                    [{text: '', sublist: ['Carta d\'identità', 'Codice fiscale', ' Carta soggiorno', 'Codice fiscale coniuge (se sposato/vedovo)', 'Lettera di licenziamento/dimissione/cessazione del contratto', 'IBAN']}, 
+                                                                     {text: 'Da Apostillare: DFA', sublist:['Certificate of (no) pension - SSS', 'Certificate of (no) income - BIR', 'Certificate of (no) property - Municipal Office (residence)']}])">ACCAS/Pensione Sociale</li>
+                                </ul>
+                                <hr class="mobile-divider">
+                            </div>
+                            <div class="requirements" id="requirementsPatronato">
+                                <h2>Awaiting your choice from the list.</h2>
+                                <p>Please select one of the services to see the requirements.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <section class="spacediv">
+                <div></div>
+            </section>
+            <section id="contact">
+                <div class="container">
+                    <h2 id="contactush2">VISIT US</h2>
+                        <div class="map-container">
+                            <div class="map-1">
+                                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2797.266160622897!2d9.214982076630802!3d45.484584732077835!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4786c6e6240e8369%3A0x49538d4012b45d00!2sPatronato%20CsC%20-%20Vera%20Assistenza!5e0!3m2!1sit!2sit!4v1720522931462!5m2!1sit!2sit" width="400" height="300" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade" class="maps"></iframe>
+                                <p><strong>Patronato CsC - VERA Assistenza</strong></p>
+                                <p>0236524234/3247426685</p>
+                                <p>patronato.cafmi@gmail.com</p>
+                            </div>
+                            <div class="map-2">
+                                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2799.444090392323!2d9.21320067662891!3d45.4407064350054!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4786c436900108cf%3A0x29cd8bc13600db9a!2sACIS%20Brenta%20-%20Corvetto!5e0!3m2!1sit!2sit!4v1720523029704!5m2!1sit!2sit" width="400" height="300" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade" class="maps"></iframe>
+                                <p><strong>ACIS Brenta - Corvetto</strong></p>
+                                <p>3291621392</p>
+                                <p>patronato.cafmi@gmail.com</p>
+                            </div>
+                            <div class="map-3">
+                                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d89601.46645902345!2d9.126145822620815!3d45.42857754187486!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4786c102c7d7d057%3A0x155bc9a81e73f5c9!2sVERA%20Assistenza%20%7C%20Kabayan%20central!5e0!3m2!1sit!2sit!4v1720539865695!5m2!1sit!2sit" width="400" height="300" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade" class="maps"></iframe>
+                                <p><strong>VERA Assistenza | Kabayan Central</strong></p>
+                                <p>0236756429/388855213</p>
+                                <p>patronato.cafmi@gmail.com</p>
+                            </div>
+                        </div> 
+                    </div>
+                    <div class="spacer"></div>
+                </div>
+            </section>
+        </main>
+        <footer>
+            <div class="container">
+                <div class="social-icons">
+                    <a href="https://www.instagram.com" target="_blank"><img src="assets/png/7.png" alt="Instagram Icon"></a>
+                    <a href="https://www.facebook.com/patronatoerma/" target="_blank"><img src="assets/png/8.png" alt="Facebook Icon"></a>
+                    <a href="https://www.twitter.com" target="_blank"><img src="assets/png/9.png" alt="Twitter Icon"></a>
+                </div>
+                <p>&copy; 2024 VERA Assistenza Milan, Italy. All rights reserved.</p>
             </div>
-        </div>
+            <!-- Scroll to Top Button -->
+            <button id="scrollToTopBtn" title="Go to top">△</button>
+        </footer>
     </div>
-    <!-- Services Card end -->
 
-    <!-- Services text start -->
-    <div class="services-text-container trigger">
-        <h2 id="patronato" class="hidden">PATRONATO</h2>
-        <p class="requirements hidden">Click on one of the services to see the requirements</p>
-        <div class="acc-container">
-            <div class="acc-box hidden-box">
-                <div class="acc-heading">
-                    <p class="heading">Pensioni e contributi</p>
-                    <p class="arrow-services-text symbol">+</p> <!-- For now it's a plus -->
-                </div>
-                <div class="acc-text">
-                    <ul>
-                        <li>Call us to inquire about pensioni e contributi!</li>
-                    </ul>
-                </div>
-            </div>
-            <div class="acc-box hidden-box">
-                <div class="acc-heading">
-                    <p class="heading">Disoccupazione</p>
-                    <p class="arrow-services-text symbol">+</p> <!-- For now it's a plus -->
-                </div>
-                <div class="acc-text">
-                    <ul>
-                        <li>Carta d'identità</li>
-                        <li>Codice fiscale</li>
-                        <li>Carta di soggiorno / Permesso di soggiorno</li>
-                        <li>Contratto di lavoro</li>
-                        <li>Lettera di licenziamento / Fine contratto</li>
-                        <li>Ultimo bollettino / Busta paga</li>
-                        <li>IBAN</li>
-                    </ul>
-                </div>
-            </div>
-            <div class="acc-box hidden-box">
-                <div class="acc-heading">
-                    <p class="heading">Maternità Obbligatoria</p>
-                    <p class="arrow-services-text symbol">+</p> <!-- For now it's a plus -->
-                </div>
-                <div class="acc-text">
-                    <ul>
-                        <li>Carta d'identità</li>
-                        <li>Codice fiscale</li>
-                        <li>Carta di soggiorno / Permesso di soggiorno</li>
-                        <li>Certificato di gravidanza (con data presunto parto)</li>
-                    </ul>
-                </div>
-            </div>
-            <div class="acc-box hidden-box">
-                <div class="acc-heading">
-                    <p class="heading">Assegno Maternità (Comune)</p>
-                    <p class="arrow-services-text symbol">+</p> <!-- For now it's a plus -->
-                </div>
-                <div class="acc-text">
-                    <ul>
-                        <li>Mamma senza lavoro</li>
-                        <li>Carta d'identità</li>
-                        <li>Codice fiscale</li>
-                        <li>Carta di soggiorno</li>
-                        <li>ISEE (present)</li>
-                        <li>IBAN (richiedente)</li>
-                    </ul>
-                </div>
-            </div>
-            <div class="acc-box hidden-box">
-                <div class="acc-heading">
-                    <p class="heading">Invalidità Civile</p>
-                    <p class="arrow-services-text symbol">+</p> <!-- For now it's a plus -->
-                </div>
-                <div class="acc-text">
-                    <ul>
-                        <li>Carta d'identità</li>
-                        <li>Codice fiscale</li>
-                        <li>Carta di soggiorno / Permesso di soggiorno</li>
-                        <li>Certificato medico</li>
-                        <li>IBAN (richiedente)</li>
-                    </ul>
-                </div>
-            </div>
-            <div class="acc-box hidden-box">
-                <div class="acc-heading">
-                    <p class="heading">Gestione COLF e Badante</p>
-                    <p class="arrow-services-text symbol">+</p> <!-- For now it's a plus -->
-                </div>
-                <div class="acc-text">
-                    <ul>
-                        <li>Call us to inquire about gestione COLF e badante!</li>
-                    </ul>
-                </div>
-            </div>
-            <div class="acc-box hidden-box">
-                <div class="acc-heading">
-                    <p class="heading">CUD</p>
-                    <p class="arrow-services-text symbol">+</p> <!-- For now it's a plus -->
-                </div>
-                <div class="acc-text">
-                    <ul>
-                        <li>Call us to inquire about CUD!</li>
-                    </ul>
-                </div>
-            </div>
-            <div class="acc-box hidden-box">
-                <div class="acc-heading">
-                    <p class="heading">Buste Paga</p>
-                    <p class="arrow-services-text symbol">+</p> <!-- For now it's a plus -->
-                </div>
-                <div class="acc-text">
-                    <ul>
-                        <li>Call us to inquire about buste paga!</li>
-                    </ul>
-                </div>
-            </div>
-            <div class="acc-box hidden-box">
-                <div class="acc-heading">
-                    <p class="heading">Pensione Sociale (+67 anni con almeno 5 anni di contributi)</p>
-                    <p class="arrow-services-text symbol">+</p> <!-- For now it's a plus -->
-                </div>
-                <div class="acc-text">
-                    <ul>
-                        <li>Carta d'identità</li>
-                        <li>Codice fiscale</li>
-                        <li>Carta di soggiorno</li>
-                        <li>Codice fiscale coniuge (se sposato / vedovo)</li>
-                        <li>Lettera di licenziamento / Dimissione / Cessazione del contratto</li>
-                        <li>IBAN</li>
-                    </ul>
-                    <ul>
-                        <li class="no-disc">Da apostillare: DFA</li>
-                    </ul>
-                    <ul>
-                        <li>Certificate of (no) pension - SSS</li>
-                        <li>Certificate of (no) income - BIR</li>
-                        <li>Certificate of (no) property - Municipal Office (residence)</li>
-                    </ul>
-                </div>
-            </div>
-            <div class="acc-box hidden-box">
-                <div class="acc-heading">
-                    <p class="heading">Pensione di Vecchiaia (+67 anni con almeno 20 anni di contributi)</p>
-                    <p class="arrow-services-text symbol">+</p> <!-- For now it's a plus -->
-                </div>
-                <div class="acc-text">
-                    <ul>
-                        <li>Carta d'identità</li>
-                        <li>Codice fiscale</li>
-                        <li>Carta di soggiorno / permesso di soggiorno</li>
-                        <li>Codice fiscale coniuge (se sposato / vedovo)</li>
-                        <li>Lettera di licenziamento / Dimissione / Cessazione del contratto</li>
-                        <li>IBAN</li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-
-        <h2 id="caf" class="hidden">CAF</h2>
-        <p class="requirements hidden">Click on one of the services to see the requirements</p>
-        <div class="acc-container">
-            <div class="acc-box hidden-box">
-                <div class="acc-heading">
-                    <p class="heading">ISEE 2024</p>
-                    <p class="arrow-services-text symbol">+</p> <!-- For now it's a plus -->
-                </div>
-                <div class="acc-text">
-                    <ul>
-                        <li>Carta di identità e codice fiscale (persone nello stato di famiglia)</li>
-                        <li>CUD 2023 / Reddito 2022</li>
-                        <li>Saldo finale e giacenza media 2022 (estratto conto della banca)</li>
-                        <li>Contratto di casa (con registrazione)</li>
-                        <li>Se in mutuo, visura catastale + capitale residuo</li>
-                        <li>Targa macchina / motorino</li>
-                        <li>Certificato di invalidità (se c’è)</li>
-                    </ul>
-                </div>
-            </div>
-            <div class="acc-box hidden-box">
-                <div class="acc-heading">
-                    <p class="heading">Modello Unico/730</p>
-                    <p class="arrow-services-text symbol">+</p> <!-- For now it's a plus -->
-                </div>
-                <div class="acc-text">
-                    <ul>
-                        <li>Carta d'identità</li>
-                        <li>Codice fiscale</li>
-                        <li>Codice fiscale (famiglia a carico)</li>
-                        <li>CUD (Present)</li>
-                        <li>Contratto di casa (con registrazione)</li>
-                        <li>Se in mutuo, contratto di compravendita/mutuo e interessi passivi</li>
-                        <li>Premi per assicurazione</li>
-                        <li>Spese mediche</li>
-                        <li>Spese scolastiche</li>
-                        <li>Spese sportive (figli)</li>
-                        <li>Spese abbonamento ATM</li>
-                    </ul>
-                </div>
-            </div>
-            <div class="acc-box hidden-box">
-                <div class="acc-heading">
-                    <p class="heading">Carta Acquisti (minore di 3 anni/65 anni)</p>
-                    <p class="arrow-services-text symbol">+</p> <!-- For now it's a plus -->
-                </div>
-                <div class="acc-text">
-                    <ul>
-                        <li>ISEE non superiore a 7.120,39€</li>
-                        <li>Codice fiscale / Carta di identità / Permesso / Carta di soggiorno (genitore / richiedente)</li>
-                    </ul>
-                </div>
-            </div>
-            <div class="acc-box hidden-box">
-                <div class="acc-heading">
-                    <p class="heading">Successioni</p>
-                    <p class="arrow-services-text symbol">+</p> <!-- For now it's a plus -->
-                </div>
-                <div class="acc-text">
-                    <ul>
-                        <li>Call us to inquire about successioni!</li>
-                    </ul>
-                </div>
-            </div>
-            <div class="acc-box hidden-box">
-                <div class="acc-heading">
-                    <p class="heading">Contratto di affitto</p>
-                    <p class="arrow-services-text symbol">+</p> <!-- For now it's a plus -->
-                </div>
-                <div class="acc-text">
-                    <ul>
-                        <li>Call us to inquire about contratto di affitto!</li>
-                    </ul>
-                </div>
-            </div>
-            <div class="acc-box hidden-box">
-                <div class="acc-heading">
-                    <p class="heading">Calcolo TFR</p>
-                    <p class="arrow-services-text symbol">+</p> <!-- For now it's a plus -->
-                </div>
-                <div class="acc-text">
-                    <ul>
-                        <li>Call us to inquire about calcolo TFR!</li>
-                    </ul>
-                </div>
-            </div>
-            <div class="acc-box hidden-box">
-                <div class="acc-heading">
-                    <p class="heading">Apertura e Chiusura Partita IVA</p>
-                    <p class="arrow-services-text symbol">+</p> <!-- For now it's a plus -->
-                </div>
-                <div class="acc-text">
-                    <ul>
-                        <li>Call us to inquire about apertura e chiusura Partita IVA!</li>
-                    </ul>
-                </div>
-            </div>
-            <div class="acc-box hidden-box">
-                <div class="acc-heading">
-                    <p class="heading">Gestione Contabilità</p>
-                    <p class="arrow-services-text symbol">+</p> <!-- For now it's a plus -->
-                </div>
-                <div class="acc-text">
-                    <ul>
-                        <li>Call us to inquire about gestione contabilità!</li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-
-        <h2 id="immigrazione" class="hidden">IMMIGRAZIONE</h2>
-        <p class="requirements hidden">Click on one of the services to see the requirements</p>
-        <div class="acc-container">
-            <div class="acc-box hidden-box">
-                <div class="acc-heading">
-                    <p class="heading">Rinnovo/Rilascio del Permesso di Soggiorno</p>
-                    <p class="arrow-services-text symbol">+</p> <!-- For now it's a plus -->
-                </div>
-                <div class="acc-text">
-                    <ul>
-                        <li>Passport</li>
-                        <li>Permesso di soggiorno</li>
-                        <li>Carta d'identità</li>
-                        <li>Codice fiscale</li>
-                        <li>Contratto di lavoro (UNILAV/Denuncia rapporto di lavoro)</li>
-                        <li>Ultime 3 buste paga o bollettini INPS</li>
-                        <li>CUD</li>
-                        <li>Documenti personali dei figli (se ci sono figli meno di 14 anni)</li>
-                    </ul>
-                </div>
-            </div>
-            <div class="acc-box hidden-box">
-                <div class="acc-heading">
-                    <p class="heading">Carta Soggiorno</p>
-                    <p class="arrow-services-text symbol">+</p> <!-- For now it's a plus -->
-                </div>
-                <div class="acc-text">
-                    <ul>
-                        <li class="no-disc">Rilascio:</li>
-                    </ul>
-                    <ul>
-                        <li>Permesso di soggiorno, Carta d’identità, Codice fiscale, Passaporto</li>
-                        <li>Contratto di lavoro (denuncia rapporto di lavoro / modello UNILAV)</li>
-                        <li>Bollettini INPS / Busta paga</li>
-                        <li>CUD</li>
-                        <li>Alloggiativa (se c’è carico)</li>
-                        <li>Test lingua italiana</li>
-                    </ul>
-                    <ul>
-                        <li class="no-disc">Aggiornamento:</li>
-                    </ul>
-                    <ul>
-                        <li>Permesso di soggiorno, Carta d’identità, Codice fiscale, Passaporto</li>
-                    </ul>
-                </div>
-            </div>
-            <div class="acc-box hidden-box">
-                <div class="acc-heading">
-                    <p class="heading">Test Italiano (Appuntamento)</p>
-                    <p class="arrow-services-text symbol">+</p> <!-- For now it's a plus -->
-                </div>
-                <div class="acc-text">
-                    <ul>
-                        <li>Carta d'identità / Passaporto</li>
-                        <li>Codice fiscale</li>
-                        <li>Carta di soggiorno / Permesso di soggiorno</li>
-                        <li>SPID</li>
-                    </ul>
-                </div>
-            </div>
-            <div class="acc-box hidden-box">
-                <div class="acc-heading">
-                    <p class="heading">Ricongiungimento Familiare</p>
-                    <p class="arrow-services-text symbol">+</p> <!-- For now it's a plus -->
-                </div>
-                <div class="acc-text">
-                    <ul>
-                        <li class="no-disc">Richiedente:</li>
-                    </ul>
-                    <ul>
-                        <li>Carta d’identità, Codice fiscale</li>
-                        <li>Permesso di soggiorno e Passaporto</li>
-                        <li>CUD / 730 / Unico / Bollettini INPS</li>
-                        <li>Busta paga</li>
-                        <li>Contratto di casa</li>
-                        <li>Idoneità alloggiativa</li>
-                        <li>S2 e Carta d’identità del proprietario</li>
-                        <li>S3 e Carta d’identità del datore di lavoro</li>
-                        <li>Contratto di lavoro</li>
-                        <li>Marca da bollo (€16)</li>
-                        <li>Certificato di stato di famiglia</li>
-                    </ul>
-                    <ul>
-                        <li class="no-disc">Persona da ricongiungere:</li>
-                    </ul>
-                    <ul>
-                        <li>Passaporto (Filippine)</li>
-                    </ul>
-                </div>
-            </div>
-            <div class="acc-box hidden-box">
-                <div class="acc-heading">
-                    <p class="heading">Cittadinanza</p>
-                    <p class="arrow-services-text symbol">+</p> <!-- For now it's a plus -->
-                </div>
-                <div class="acc-text">
-                    <ul>
-                        <li>Carta d’identità</li>
-                        <li>Codice fiscale</li>
-                        <li>Permesso/Carta di soggiorno</li>
-                        <li>Passaporto</li>
-                        <li>Ultimi 3 CUD / 730 / Unico</li>
-                        <li>Certificato di residenza storico</li>
-                        <li>Bollettino postale (€250)</li>
-                        <li>Marca da bollo (€16)</li>
-                        <li>SPID</li>
-                        <li>Da apostillare: DFA</li>
-                        <li>NBI</li>
-                        <li>Birth certificate</li>
-                        <li>Marriage contract (if married)</li>
-                    </ul>
-                </div>
-            </div>
-            <div class="acc-box hidden-box">
-                <div class="acc-heading">
-                    <p class="heading">Accompagnamento</p>
-                    <p class="arrow-services-text symbol">+</p> <!-- For now it's a plus -->
-                </div>
-                <div class="acc-text">
-                    <ul>
-                        <li>Call us to inquire about accompagnamento!</li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-    </div>
-    <!-- Services text end -->
-
-    <!-- Contact Us start -->
-    <div class="contact-container trigger" id="contact">
-        <div class="contacts">
-            <h2 id="contactush2" class="hidden">Visit Us</h2>
-            <div class="map-container">
-                <div class="map-1 hidden">
-                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2797.266160622897!2d9.214982076630802!3d45.484584732077835!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4786c6e6240e8369%3A0x49538d4012b45d00!2sPatronato%20CsC%20-%20Vera%20Assistenza!5e0!3m2!1sit!2sit!4v1720522931462!5m2!1sit!2sit" width="400" height="300" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade" class="maps"></iframe>
-                    <p><strong>Patronato CsC - VERA Assistenza</strong></p>
-                    <p>0236524234/3247426685</p>
-                    <p>patronato.cafmi@gmail.com</p>
-                </div>
-                <div class="map-2 hidden">
-                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2799.444090392323!2d9.21320067662891!3d45.4407064350054!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4786c436900108cf%3A0x29cd8bc13600db9a!2sACIS%20Brenta%20-%20Corvetto!5e0!3m2!1sit!2sit!4v1720523029704!5m2!1sit!2sit" width="400" height="300" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade" class="maps"></iframe>
-                    <p><strong>ACIS Brenta - Corvetto</strong></p>
-                    <p>3291621392</p>
-                    <p>patronato.cafmi@gmail.com</p>
-                </div>
-                <div class="map-3 hidden">
-                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d89601.46645902345!2d9.126145822620815!3d45.42857754187486!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4786c102c7d7d057%3A0x155bc9a81e73f5c9!2sVERA%20Assistenza%20%7C%20Kabayan%20central!5e0!3m2!1sit!2sit!4v1720539865695!5m2!1sit!2sit" width="400" height="300" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade" class="maps"></iframe>
-                    <p><strong>VERA Assistenza | Kabayan Central</strong></p>
-                    <p>0236756429/388855213</p>
-                    <p>patronato.cafmi@gmail.com</p>
-                </div>
-            </div>
-        </div>
-    </div>
-    <!-- Contact Us end -->
-
-    <!-- Social footer start -->
-    <div class="social-footer-container trigger hidden">
-        <div class="social-footer">
-            <div class="social-icons">
-                <a href="https://www.instagram.com" target="_blank"><img src="assets/png/7.png" alt="Instagram Icon"></a>
-                <a href="https://www.facebook.com/patronatoerma/" target="_blank"><img src="assets/png/8.png" alt="Facebook Icon"></a>
-                <a href="https://www.twitter.com" target="_blank"><img src="assets/png/9.png" alt="Twitter Icon"></a>
-            </div>
-        </div>
-    </div>
-    <!-- Social footer end  -->
-
-    <!-- Footer start -->
-    <footer>
-        <div class="container">
-            <p>&copy; 2024 VERA Assistenza Milan, Italy. All rights reserved.</p>
-        </div>
-    </footer>
-    <!-- Footer end -->
-
-    <!-- JavaScript -->
     <script src="indextoo.js"></script>
 </body>
 </html>

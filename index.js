@@ -1,252 +1,135 @@
-/* window.addEventListener('scroll', function() {
-    const scrollPosition = window.scrollY;
-    const rotationFactor = 0.17; // rate at which the gradient rotates
-    const degree = (135 + scrollPosition * rotationFactor) % 360; // Start from 135 degrees
-    document.body.style.background = `linear-gradient(${degree}deg, #d09393 20%, #da1313 80%)`;
-    document.body.style.backgroundAttachment = 'fixed';
-}); */
+/* Header start */
+/* Header visibility on scroll */
+let lastScrollTop = 0;
+const header = document.querySelector('header');
 
-/* Loading screen start */
-document.addEventListener('DOMContentLoaded', function() {
-    // Wait for the window to fully load all resources
-    window.onload = function() {
-        setTimeout(function() {
-            var loadingScreen = document.getElementById('loading-screen');
-            var content = document.getElementById('content');
-            
-            // Hide the loading screen with a smooth transition
-            loadingScreen.classList.add('hidden');
-            
-            // Show the content with a smooth transition
-            content.classList.add('visible');
-        }, 1200);
-    };
-});
-/* Loading screen end */
-
-document.addEventListener("DOMContentLoaded", function() {
-    var openPopupImm = document.getElementById('openPopupImm');
-    var openPopupCaf = document.getElementById('openPopupCaf');
-    var openPopupPatronato = document.getElementById('openPopupPatronato');
-
-    var closePopupImm = document.getElementById('closePopupImm');
-    var closePopupCaf = document.getElementById('closePopupCaf');
-    var closePopupPatronato = document.getElementById('closePopupPatronato');
-
-    var popupImm = document.getElementById('popupImm');
-    var popupCaf = document.getElementById('popupCaf');
-    var popupPatronato = document.getElementById('popupPatronato');
-
-    function closeAllPopups() {
-        popupImm.style.display = 'none';
-        popupCaf.style.display = 'none';
-        popupPatronato.style.display = 'none';
-        document.body.classList.remove('popup-active'); // Remove blur effect
+window.addEventListener('scroll', () => {
+    let scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+    if (scrollTop > lastScrollTop) {
+        // Downscroll
+        header.classList.add('header--hidden');
+    } else if (scrollTop === 0) {
+        header.classList.remove('header--hidden');
     }
+    lastScrollTop = scrollTop <= 0 ? 0 : scrollTop; // For Mobile or negative scrolling
+});
 
-    openPopupImm.addEventListener('click', function(event) {
-        event.preventDefault();
-        closeAllPopups();
-        popupImm.style.display = 'flex';
-        document.body.classList.add('popup-active'); // Add blur effect
-    });
+    /* Hamburger icon start */
+    function toggleMobileMenu(menu) {
+        menu.classList.toggle('open');
+        document.querySelector('div .mobile-menu-container').classList.toggle('open');
+    }
+    /* Hamburger icon end */
+/* Header end */
 
-    openPopupCaf.addEventListener('click', function(event) {
-        event.preventDefault();
-        closeAllPopups();
-        popupCaf.style.display = 'flex';
-        document.body.classList.add('popup-active'); // Add blur effect
-    });
+/* Initial text start */
+/* Text reveal effect on scroll */
+let paragraphs = [...document.querySelectorAll('.initial-text p')];
+let spans = [];
 
-    openPopupPatronato.addEventListener('click', function(event) {
-        event.preventDefault();
-        closeAllPopups();
-        popupPatronato.style.display = 'flex';
-        document.body.classList.add('popup-active'); // Add blur effect
-    });
+paragraphs.forEach(paragraph => {
+    let htmlString = '';
+    let pArray = paragraph.textContent.split('');
+    for (let i = 0; i < pArray.length; i++) {
+        htmlString += `<span>${pArray[i]}</span>`;
+    }
+    paragraph.innerHTML = htmlString;
+})
 
-    closePopupImm.addEventListener('click', function() {
-        popupImm.style.display = 'none';
-        document.body.classList.remove('popup-active'); // Remove blur effect
-    });
+spans = [...document.querySelectorAll('span')];
 
-    closePopupCaf.addEventListener('click', function() {
-        popupCaf.style.display = 'none';
-        document.body.classList.remove('popup-active'); // Remove blur effect
-    });
-
-    closePopupPatronato.addEventListener('click', function() {
-        popupPatronato.style.display = 'none';
-        document.body.classList.remove('popup-active'); // Remove blur effect
-    });
-
-    window.addEventListener('click', function(event) {
-        if (event.target == popupImm) {
-            popupImm.style.display = 'none';
-            document.body.classList.remove('popup-active'); // Remove blur effect
+function revealSpans(){
+    for (let i = 0; spans.length; i++) {
+        if (spans[i].parentElement.getBoundingClientRect().top < window.innerHeight / 2) {
+            let {left, top} = spans[i].getBoundingClientRect();
+            top = top - (window.innerHeight * 0.4); /* Adjust to set where the reveal effect starts on the page */
+            let opacityValue = 1 - ((top * 0.01) + (left * 0.001)) < 0.1 ? 0.1 : 1 - ((top * 0.01) + (left * 0.001)).toFixed(3);
+            opacityValue = opacityValue > 1 ? 1 : opacityValue.toFixed(3);
+            spans[i].style.opacity = opacityValue;
         }
-        if (event.target == popupCaf) {
-            popupCaf.style.display = 'none';
-            document.body.classList.remove('popup-active'); // Remove blur effect
-        }
-        if (event.target == popupPatronato) {
-            popupPatronato.style.display = 'none';
-            document.body.classList.remove('popup-active'); // Remove blur effect
+    }
+}
+
+window.addEventListener('scroll', () => {
+    revealSpans();
+})
+/* Initial text end */
+
+/* Services text start*/
+let acc_boxEl = document.querySelectorAll(".acc-box");
+
+acc_boxEl.forEach((item) => {
+    item.addEventListener("click", () => {
+        item.classList.toggle("active");
+        let symbol = item.querySelector(".symbol");
+        if (item.classList.contains("active")) {
+            symbol.textContent = "-"; // Change to minus sign
+        } else {
+            symbol.textContent = "+"; // Change back to plus sign
         }
     });
 });
 
-function showRequirements(element, category, serviceName, requirements = []) {
-    var requirementSection = document.getElementById('requirements' + category);
-    var requirementTitle = document.createElement('h2');
-    requirementTitle.textContent = serviceName;
+/* Services text end */
 
-    var requirementList = document.createElement('ul');
+/* Extras: scroll animations start*/
+const observer = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+            entry.target.classList.add('show');
+        } else {
+            entry.target.classList.remove('show');
+        }
+    })
+})
 
-    if (requirements.length > 0) {
-        requirements.forEach(function(requirement) {
-            var listItem = document.createElement('li');
-            listItem.textContent = requirement.text;
+const hiddenElements = document.querySelectorAll('.hidden');
+hiddenElements.forEach((el) => observer.observe(el))
 
-            if (requirement.sublist) {
-                listItem.classList.add('has-sublist');
-                var sublist = document.createElement('ul');
-                requirement.sublist.forEach(function(subRequirement) {
-                    var subListItem = document.createElement('li');
-                    subListItem.textContent = subRequirement;
-                    sublist.appendChild(subListItem);
-                });
-                listItem.appendChild(sublist);
+
+const accBoxObserver = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+            entry.target.classList.add('show-box');
+        } else {
+            entry.target.classList.remove('show-box');
+        }
+    })
+})
+
+const hiddenAccBoxElements = document.querySelectorAll('.hidden-box');
+hiddenAccBoxElements.forEach((el) => accBoxObserver.observe(el))
+/* Extras: scroll animations end */
+
+/* Random letters animation start */
+
+const letters = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+
+document.addEventListener('DOMContentLoaded', () => {
+    let veraParagraphs = [...document.querySelectorAll('.main-text p[data-value]')];
+
+    veraParagraphs.forEach(paragraph => {
+        let iteration = 0;
+        const originalText = paragraph.dataset.value;
+
+        const interval = setInterval(() => {
+            paragraph.innerText = paragraph.innerText
+                .split("")
+                .map((letter, index) => {
+                    if (index < iteration) {
+                        return originalText[index];
+                    }
+
+                    return letters[Math.floor(Math.random() * 26)];
+                })
+                .join("");
+
+            if (iteration >= originalText.length) {
+                clearInterval(interval);
             }
 
-            requirementList.appendChild(listItem);
-        });
-    } else {
-        var listItem = document.createElement('li');
-        listItem.textContent = "Requirements not specified.";
-        requirementList.appendChild(listItem);
-    }
-
-    requirementSection.innerHTML = '';
-    requirementSection.appendChild(requirementTitle);
-    requirementSection.appendChild(requirementList);
-
-    var servicesList = document.querySelectorAll('.services li');
-    servicesList.forEach(function(service) {
-        service.classList.remove('selected');
-    });
-
-    element.classList.add('selected');
-}
-
-document.querySelectorAll('.popup ul li').forEach(li => {
-    if (li.querySelector('ul')) {
-        li.style.fontWeight = 'bold'; // Make the parent list item bold
-    }
-});
-
-/* Smaller screens ver. start*/
-document.addEventListener('DOMContentLoaded', function() {
-    var menuButton = document.getElementById('menuButton');
-    var closeButton = document.getElementById('closeButton');
-    var popupMenu = document.getElementById('popupMenu');
-
-    function toggleMenu() {
-        popupMenu.classList.toggle('show');
-        menuButton.classList.toggle('hidden');
-        closeButton.classList.toggle('hidden');
-    }
-
-    menuButton.addEventListener('click', function() {
-        toggleMenu();
-    });
-
-    closeButton.addEventListener('click', function() {
-        toggleMenu();
-    });
-
-    window.addEventListener('click', function(event) {
-        if (event.target !== menuButton && event.target !== closeButton && !popupMenu.contains(event.target)) {
-            popupMenu.classList.remove('show');
-            menuButton.classList.remove('hidden');
-            closeButton.classList.add('hidden');
-        }
-    });
-
-    // Close popup menu on section click and then scroll smoothly
-    document.querySelectorAll('.popup-menu ul li a').forEach(link => {
-        link.addEventListener('click', function(event) {
-            event.preventDefault();
-            var targetId = this.getAttribute('href').substring(1);
-            var targetElement = document.getElementById(targetId);
-
-            // Close the popup menu first
-            popupMenu.classList.remove('show');
-            menuButton.classList.remove('hidden');
-            closeButton.classList.add('hidden');
-
-            // Scroll to the target section after a short delay
-            setTimeout(function() {
-                targetElement.scrollIntoView({
-                    behavior: 'smooth',
-                    block: 'start'
-                });
-            }, 300); // Adjust the timeout as needed for a smoother experience
-        });
-    });
-
-    // Smooth scroll for desktop menu
-    document.querySelectorAll('nav ul li a').forEach(link => {
-        link.addEventListener('click', function(event) {
-            event.preventDefault();
-            var targetId = this.getAttribute('href').substring(1);
-            var targetElement = document.getElementById(targetId);
-
-            targetElement.scrollIntoView({
-                behavior: 'smooth',
-                block: 'start'
-            });
-        });
+            iteration += 1/4;
+        }, 30);
     });
 });
-/* Smaller screens ver. end */
-
-// Scroll to top button functionality
-var scrollToTopBtn = document.getElementById("scrollToTopBtn");
-var rootElement = document.documentElement;
-
-function handleScroll() {
-    var scrollTotal = rootElement.scrollHeight - rootElement.clientHeight;
-    if ((rootElement.scrollTop / scrollTotal) > 0.1) {
-        scrollToTopBtn.style.display = "block";
-    } else {
-        scrollToTopBtn.style.display = "none";
-    }
-}
-
-function scrollToTop() {
-    scrollToTopBtn.style.display = 'none';
-    rootElement.scrollTo({
-        top: 0,
-        behavior: "smooth"
-    });
-}
-
-scrollToTopBtn.addEventListener("click", scrollToTop);
-document.addEventListener("scroll", handleScroll);
-
-// Move social icons on scroll (for smaller screens)
-window.addEventListener('scroll', function() {
-    const socialIcons = document.querySelector('.social-icons');
-    const homeSection = document.getElementById('home');
-    const homeSectionHeight = homeSection.offsetHeight;
-    const scrollY = window.scrollY;
-
-    if (window.innerWidth <= 768) {
-        if (scrollY > 1) {
-            socialIcons.classList.add('fixed');
-        } else {
-            socialIcons.classList.remove('fixed');
-        }
-    }
-});
+/* Random letters animation end */
