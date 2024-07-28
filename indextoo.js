@@ -82,6 +82,20 @@ const observer = new IntersectionObserver((entries) => {
 
 const hiddenElements = document.querySelectorAll('.hidden');
 hiddenElements.forEach((el) => observer.observe(el))
+
+
+const accBoxObserver = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+            entry.target.classList.add('show-box');
+        } else {
+            entry.target.classList.remove('show-box');
+        }
+    })
+})
+
+const hiddenAccBoxElements = document.querySelectorAll('.hidden-box');
+hiddenAccBoxElements.forEach((el) => accBoxObserver.observe(el))
 /* Extras: scroll animations end */
 
 /* Random letters animation start */
