@@ -57,15 +57,18 @@ window.addEventListener('scroll', () => {
 
 /* Services text start*/
 let acc_boxEl = document.querySelectorAll(".acc-box");
-let symbol = document.querySelector(".symbol");
 
-
-acc_boxEl.forEach((item, index) => {
+acc_boxEl.forEach((item) => {
     item.addEventListener("click", () => {
         item.classList.toggle("active");
-    })
-})
-
+        let symbol = item.querySelector(".symbol");
+        if (item.classList.contains("active")) {
+            symbol.textContent = "-"; // Change to minus sign
+        } else {
+            symbol.textContent = "+"; // Change back to plus sign
+        }
+    });
+});
 
 /* Services text end */
 

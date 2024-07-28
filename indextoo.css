@@ -528,17 +528,22 @@ span { /* Won't use span for anything... for now. */
 }
 
 .acc-heading {
-    font-size: 20px;
+    font-size: 1.4rem;
 }
 
 .symbol {
     font-size: 20px;
+    transition: transform 0.3s ease;
+}
+
+.acc-box.active .symbol {
+    transform: rotate(-180deg); /* Rotate the symbol */
 }
 
 .acc-text {
     max-height: 0;
     overflow: hidden;
-    transition: all 0.4s ease-in-out;
+    transition: all 0.1s ease-in-out;
 }
 
 .acc-text p {
