@@ -131,8 +131,8 @@
 }
 
 :root {
-    --bg-color: #ec2c3f;
-    --main-red-faded: #ec2c3ff0;
+    --bg-color: #e03c4c;
+    --main-red-faded: #e03c4cf0;
     --pure-black: black;
     --text-color: #1a1313c2;
     --main-color: #eadcdc;
@@ -176,8 +176,8 @@ header {
     background: transparent;
     padding: 15px 5%;
     transition: all 0.5s ease;
-    border-top: 2px solid var(--bg-color);
-    border-bottom: 2px solid var(--bg-color);
+    border-top: 2px solid var(--main-red-faded);
+    border-bottom: 2px solid var(--main-red-faded);
 }
 
 .header--hidden {
