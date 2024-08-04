@@ -106,6 +106,23 @@
     }
 }
 
+@keyframes translateZ {
+    0% {
+        opacity: 0;
+        transform: translateZ(-100%);
+    }
+
+    80% {
+        opacity: 0.1;
+        transform: translateY(100%);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
 .slide-in-left {
     animation: slideInFromLeft 1s forwards;
 }
@@ -1037,7 +1054,7 @@ footer p {
 
 .show-box {
     opacity: 1;
-    animation: slideInFromLeft 0.75s linear;
+    animation: translateZ 0.75s linear;
 }
 /* Extras: scroll animations end */
 
