@@ -679,6 +679,13 @@ span { /* Won't use span for anything... for now. */
     margin: 0 10px;
 }
 
+.social-icons img {
+    opacity: 0.8;
+    width: 1rem;
+    height: 1rem;
+    color: var(--bg-color);
+}
+
 .social-icons a img:hover {
     transform: scale(1.5);
 }
