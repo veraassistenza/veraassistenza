@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Favicon -->
+    <link rel="icon" href="/assets/VERALogo.png" type="image/x-icon">
+
+
+    <link rel="stylesheet" href="login.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Figtree:ital,wght@0,300..900;1,300..900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+
+    <!-- Open graph tags start -->
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://veraassistenza.it/" />
+    <meta property="og:title" content="VERA Assistenza" />
+    <meta property="og:description" content="" />
+    <meta property="og:image" content="https://veraassistenza.it/assets/png/vera_logo_big.png" />
+
+    <!-- Open Graph / Twitter (X) -->
+    <meta property="twitter:card" content="summary_large_image" />
+    <meta property="twitter:url" content="https://veraassistenza.it/" />
+    <meta property="twitter:title" content="VERA Assistenza" />
+    <meta property="twitter:description" content="" />
+    <meta property="twitter:image" content="https://veraassistenza.it/assets/png/vera_logo_big.png" />
+    <!-- Open graph tags end -->
+
+    <title>VERA Assistenza</title>
+</head>
+<body>
+    <!-- Header start -->
+    <header>
+        <div class="header-container trigger">
+            <a href="#home" class="logo"><img src="/assets/png/vera_logo_big_only.png" alt="VERA Logo"></a>
+            <ul class="navbar"> <!-- Navbar -->
+                <li><a href="#home">Home</a></li>
+                <li><a href="#aboutUs">About Us</a></li>
+                <li><a href="#services">Our Services</a></li>
+                <li><a href="#contact">Contact Us</a></li>
+            </ul>
+            <!-- Note: Maybe add something else later on. Want the navbar to be in the middle instead of moving it to the right. -->
+            <!-- Menu icon start -->
+            <div class="hamburger-icon" onclick="toggleMobileMenu(this)">
+                <div class="bar1 bar"></div>
+                <div class="bar2 bar"></div>
+                <div class="bar3 bar"></div>
+                <div class="mobile-menu-container">
+                    <ul class="mobile-menu">
+                        <li><a href="#home">Home</a></li>
+                        <li><a href="#aboutUs">About Us</a></li>
+                        <li><a href="#services">Our Services</a></li>
+                        <li><a href="#contact">Contact Us</a></li>
+                    </ul>
+                </div>
+            </div>
+            <!-- Menu icon end -->
+        </div>
+    </header>
+    <!-- Header end -->
+
+    <!-- Login start -->
+    <div class="login">
+        <div class="login-container">
+            <form id="loginForm" class="login-form slide-in-left">
+                <h2>Reserved Area</h2>
+                <div class="input-group">
+                    <label for="username">Username:</label>
+                    <input type="text" id="username" name="username" required>
+                </div>
+                <div class="input-group">
+                    <label for="password">Password:</label>
+                    <input type="password" id="password" name="password" required>
+                </div>
+                <button type="submit" class="login-btn">Login</button>
+                <p id="error-msg" class="error-message hidden">Invalid username or password</p>
+            </form>
+        </div>
+    </div>
+    <!-- Login end -->
+
+    <!-- Social footer start -->
+    <div class="social-footer-container trigger hidden">
+        <div class="social-footer">
+            <div class="social-icons">
+                <a href="https://www.instagram.com" target="_blank"><img src="assets/png/7.png" alt="Instagram Icon"></a>
+                <a href="https://www.facebook.com/patronatoerma/" target="_blank"><img src="assets/png/8.png" alt="Facebook Icon"></a>
+                <a href="https://www.twitter.com" target="_blank"><img src="assets/png/9.png" alt="Twitter Icon"></a>
+            </div>
+        </div>
+    </div>
+    <!-- Social footer end  -->
+
+    <!-- Footer start -->
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 VERA Assistenza Milan, Italy. All rights reserved.</p>
+        </div>
+    </footer>
+    <!-- Footer end -->
+
+    <!-- JavaScript -->
+    <script src="login.js"></script>
+</body>
+</html>
