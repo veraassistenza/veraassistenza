@@ -135,8 +135,8 @@ document.addEventListener('DOMContentLoaded', () => {
 /* Random letters animation end */
 
 // List of valid credentials
-const validUsername = "vera";
-const validPassword = "manalo";
+const validUsername = "admin";
+const validPassword = "password123";
 
 document.getElementById("loginForm").addEventListener("submit", function(event) {
     event.preventDefault(); // Prevent form from submitting
@@ -147,6 +147,8 @@ document.getElementById("loginForm").addEventListener("submit", function(event) 
 
     // Check if the credentials match
     if (username === validUsername && password === validPassword) {
+        // Store a login flag in sessionStorage
+        sessionStorage.setItem("loggedIn", "true");
         // Redirect to reserved area
         window.location.href = "reserved_area.html";
     } else {
