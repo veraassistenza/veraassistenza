@@ -135,8 +135,8 @@ document.addEventListener('DOMContentLoaded', () => {
 /* Random letters animation end */
 
 // List of valid credentials
-const validUsername = "admin";
-const validPassword = "password123";
+const validUsername = "vera";
+const validPassword = "manalo";
 
 document.getElementById("loginForm").addEventListener("submit", function(event) {
     event.preventDefault(); // Prevent form from submitting
