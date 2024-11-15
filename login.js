@@ -150,7 +150,7 @@ document.getElementById("loginForm").addEventListener("submit", function(event) 
         // Store a login flag in sessionStorage
         sessionStorage.setItem("loggedIn", "true");
         // Redirect to reserved area
-        window.location.href = "reserved_area.html";
+        window.location.href = "reserved-area.html";
     } else {
         // Show error message
         errorMsg.classList.remove("hidden");
